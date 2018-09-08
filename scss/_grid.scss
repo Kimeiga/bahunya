@@ -1,0 +1,334 @@
+// The MIT License (MIT)
+//
+// Copyright (c) 2015-2018 Yegor Bugayenko
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included
+// in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+// SOFTWARE.
+
+* {
+  border: 0;
+  border-collapse: separate;
+  border-spacing: 0;
+  box-sizing: border-box;
+  // margin: 0;
+  max-width: 100%;
+  outline: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+html,
+body {
+  @extend %sans-serif;
+  width: 100vw;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  // background: darken($white, 4);
+  // color: lighten($black, 10);
+  // padding: 2 * $em;
+  background: $site-bg;
+  color: $site-text;
+  // font-weight: 300;
+}
+
+// p,
+// ul,
+// ol,
+// dl,
+// blockquote,
+// hr,
+// pre,
+// table,
+// form,
+// fieldset,
+// figure,
+// address {
+//   margin-bottom: 1.65 * $em;
+// }
+
+section {
+  margin-left: auto;
+  margin-right: auto;
+  width: 50 * $em;
+}
+
+header {
+  padding: bs(3) bs(1) bs(2);
+  width: bs(25);
+  margin: 0 auto;
+  text-align: center;
+  // background: #000;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  // justify-content: center;
+
+  font-weight: 300;
+
+  p {
+    margin-top: 0;
+  }
+
+  
+
+  nav {
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    left: 0;
+    width: 100vw; /* Full width */
+    margin: 0 auto;
+    // padding: bs(0.5) calc(50vw - 25rem);
+    padding: bs(0.5) 0;
+
+    font-size: 80%;
+    // font-weight: 100;
+    
+
+    // background: #fff;
+
+    // border-bottom: solid 0.5px #eee;
+    // background: rgba(0, 0, 0, 0.8);
+    // color: white;
+
+    background: rgba($site-text, 0.9);
+
+    display: flex;
+
+    font-family: $sans-serif;
+    font-weight: 200;
+
+    h1 {
+      // float: left;
+      font-size: inherit;
+      line-height: inherit;
+      margin: 0;
+      margin-left: bs(1);
+
+      font-family: $sans-serif;
+    }
+
+    a {
+      // justify-content: flex-end;
+
+      // float: right;
+      text-decoration: none;
+      font-family: $serif;
+      // color: #000;
+      color: $site-bg;
+
+      margin-left: bs(1);
+      font-weight: 400;
+    }
+
+    a:first-of-type {
+      margin-left: auto;
+    }
+
+    a:last-of-type {
+
+      margin-right: bs(1);
+    }
+
+    // text-align: center;
+
+    ul, ol {
+      font-size: 90%;
+      list-style: none;
+      margin: 0;
+      // text-align: center;
+      float: right;
+
+
+      li {
+        // float: right;
+        display: inline-block;
+        margin-left: .5 * $em;
+        margin-right: .5 * $em;
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+main {
+  max-width: 70rem;
+  margin: 0 auto;
+  border-top: 0.5px solid $site-text-grey;
+}
+
+// main::before {
+//   // position: absolute;
+//   // top: 0;
+//   // bottom: 0;
+//   // left: 0;
+//   // right: 0;
+//   // margin: 0 auto;
+//   // // width: 80%;
+//   // height: 100%;
+//   // // border-top: 1px solid $site-text;
+
+//   // position: absolute;
+//   //   top: 0;
+//   //   left: 0;
+//   //   right: 0;
+//   // position: relative;
+//   display: inline-block;
+//     z-index: 10;
+//     content: '';
+//     // width: 80vw;
+//     margin: 0 auto;
+//     border-top: 1px solid;
+//     border-top-color: #ccc;
+//     box-sizing: border-box;
+//     width: 80%;
+// }
+
+
+footer {
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  text-shadow: 0 1px 2px rgba(0,0,0, 0.5);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  ul, ol {
+    color: white;
+  }
+  a {
+    color: $primary;
+    text-decoration: none;
+  }
+}
+
+article,
+footer {
+  // padding: 2.4 * $em;
+  padding: bs(1);
+}
+
+
+article {
+  // background: $white;
+  // border: 1px solid lighten($black, 85);
+  // border-radius: .4 * $em;
+  // width: 60rem;
+  // margin: 0 auto;
+  // padding: bs(1) calc(50vw - 25rem);
+  // width: 55rem;
+  width: bs(25);
+  margin: 0 auto;
+}
+
+
+/*
+nav {
+  text-align: center;
+
+  ul {
+    list-style: none;
+    margin-left: 0;
+    text-align: center;
+
+    li {
+      display: inline-block;
+      margin-left: .5 * $em;
+      margin-right: .5 * $em;
+      vertical-align: middle;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+*/
+ol,
+ul {
+  margin-left: 1.75 * $em;
+}
+
+// li {
+//   dl,
+//   ol,
+//   ul {
+//     margin-bottom: 0;
+//   }
+// }
+
+li dl, li ol, li ul {
+  margin-bottom: 0;
+}
+
+dl {
+  display: inline-block;
+}
+
+dt {
+  padding: 0 $em;
+}
+
+dd {
+  padding: 0 $em (.25 * $em);
+
+  &:last-of-type {
+    border-bottom: (.06 * $em) solid $gray;
+  }
+
+  + dt {
+    border-top: (.06 * $em) solid $gray;
+    padding-top: .5 * $em;
+  }
+}
+
+blockquote {
+  border-left: (.12 * $em) solid $gray;
+  padding: (.25 * $em) $em (.25 * $em) (.88 * $em);
+
+  footer {
+    color: $gray;
+    // font-size: .75 * $em;
+    margin: 0;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
+img {
+  height: auto;
+  margin: 0 auto;
+}
+
+figure {
+  img {
+    display: block;
+  }
+}
