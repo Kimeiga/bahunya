@@ -2,7 +2,7 @@
 
 ## 10KB classless CSS framework with responsive typography, navbar, syntax highlighting, and much more!
 
-To develop locally:
+### To develop locally:
 
 `npm start`
 
@@ -10,7 +10,7 @@ To develop locally:
 
 It will be available at `localhost:1234`
 
-To build:
+### To build:
 
 `npm run build`
 
