@@ -10,5 +10,9 @@
   "dependencies": {
     "normalize.css": "^8.0.0",
     "shevy": "^2.1.0"
+  },
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html --out-dir docs --public-url ./"
   }
 }
