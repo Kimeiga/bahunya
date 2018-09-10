@@ -74,8 +74,7 @@ pre {
 }
 
 
-code,
-kbd {
+code, kbd {
   background: $code-bg;
   border-radius: .2 * bs(1);
   color: $code-color;
@@ -86,8 +85,8 @@ kbd {
 }
 
 kbd {
-  background: $code-color;
-  color: $site-bg ;
+  color: $kbd-color;
+  background: $code-bg;
 }
 
 mark {

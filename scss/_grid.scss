@@ -99,7 +99,8 @@ header {
     width: 100vw; /* Full width */
     margin: 0 auto;
     // padding: bs(0.5) calc(50vw - 25rem);
-    padding: bs(0.5) 0;
+    padding: bs(0.5) calc(50vw - 37rem);
+    // padding: bs(0.5) 0;
 
     font-size: 80%;
     // font-weight: 100;
@@ -129,6 +130,7 @@ header {
     }
 
     a {
+      font-weight: 700;
       // justify-content: flex-end;
 
       // float: right;
@@ -138,7 +140,7 @@ header {
       color: $site-bg;
 
       margin-left: bs(1);
-      font-weight: 400;
+      
     }
 
     a:first-of-type {

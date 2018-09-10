@@ -26,13 +26,9 @@
 $em: 18px;
 
 // fonts
-@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono:400,400i,700,700i|IBM+Plex+Sans:100,400,400i,700,700i|IBM+Plex+Serif:200,200i,300,300i,400,400i,700,700i');
-
 $serif: 'Century Schoolbook', serif;
 $sans-serif: 'Gill Sans', 'Gill Sans MT', sans-serif;
 $monospace: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-
-// $monospace: Menlo, Monaco, Consolas, 'Courier New', monospace;
 
 // colors
 $primary: #E7BF60;
@@ -41,6 +37,7 @@ $site-text: #eee;
 $site-text-grey: #ccc;
 
 $code-bg: #2d2d2d;
+$kbd-color: #7ec699;
 $code-color: #e2777a;
 
 
