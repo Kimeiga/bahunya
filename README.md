@@ -4,7 +4,7 @@
 
 ![Bahunya Flower](/bahunya-flower.svg)
 
-### To develop locally:
+## To develop locally:
 
 `npm start`
 
@@ -12,13 +12,13 @@
 
 It will be available at `localhost:1234`
 
-### To build:
+## To build:
 
 `npm run build`
 
 (which runs `parcel build index.html --out-dir docs --public-url ./`)
 
-#### Thanks
+### Thanks
 
 Huge thanks to [Yegor Bugayenko](https://www.yegor256.com/) and [Filipe Freire](https://filfreire.com/) for creating [Tacit](https://yegor256.github.io/tacit/), a fantastic classless CSS framework that inspired this project. I felt that Tacit was good, but I wanted responsive typography, vertical rhythm, a navbar, better web safe fonts, dark color theme, code syntax highlighting, and more. So I made Bahunya!
 
