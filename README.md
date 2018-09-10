@@ -24,10 +24,10 @@ Huge thanks to [Yegor Bugayenko](https://www.yegor256.com/) and [Filipe Freire](
 
 Tacit version 1.3.2 is 6kb, and Bahunya is 10kb, so I've only added 4kb for all these other features!
 
-Thanks to Morris Fuller Benton for designing Century Schoolbook in 1919, Bahunya's beautiful web-safe serif headings font.
+Thanks to [Morris Fuller Benton](https://www.linotype.com/682/morris-fuller-benton.html) for designing Century Schoolbook in 1919, Bahunya's beautiful web-safe serif headings font.
 
 Thanks to Eric Gill for creating Gill Sans in 1926, Bahunya's elegant web-safe sans-serif body font.
 
-Thanks to Luc(as) de Groot for designing Consolas around 2006, Bahunya's legible monospace font.
+Thanks to [Luc(as) de Groot](https://www.lucasfonts.com/home/) for designing Consolas around 2006, Bahunya's legible monospace font.
 
 All fonts have fallbacks for Windows/Mac/Linux font diversion.
