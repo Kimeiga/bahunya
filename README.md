@@ -1,6 +1,6 @@
 # Bahunya
 
-## 10KB classless CSS framework with responsive typography, navbar, syntax highlighting, and much more!
+> 10KB classless CSS framework with responsive typography, navbar, syntax highlighting, and much more!
 
 ### To develop locally:
 
