@@ -70,7 +70,10 @@ mark {
 */
 
 pre {
-  // white-space: pre-wrap; 
+  code:not([class]) {
+    padding: bs(1);
+    overflow-x: scroll;
+  }
 }
 
 

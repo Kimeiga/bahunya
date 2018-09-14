@@ -507,6 +507,10 @@ mark {
 }
 
 */
+pre code:not([class]) {
+  padding: 1.5em;
+  overflow-x: scroll; }
+
 code, kbd {
   background: #2d2d2d;
   border-radius: 0.3em;
@@ -982,7 +986,7 @@ li ul {
 
 dl {
   display: inline-block;
-  margin: 1.5em 0; }
+  margin: 0 0 1.5em 0; }
 
 dt {
   padding-top: 0.75em;

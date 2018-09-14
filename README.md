@@ -2,7 +2,7 @@
 
 10KB classless CSS framework with responsive typography, navbar, syntax highlighting, and much more!
 
-![Bahunya Flower](/bahunya-flower.svg)
+![Bahunya Flower](/bahunya-logo.png)
 
 ## To develop locally:
 
