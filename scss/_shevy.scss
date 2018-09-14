@@ -1,4 +1,6 @@
 
+@import 'defs';
+
 @import "node_modules/shevy/core/shevy";
 
 @include headings;
@@ -7,20 +9,11 @@
 
 
 
-@mixin for-tablet-up {
-  @media (min-width: 600px) {
-    @content;
-  }
-}
-@mixin for-desktop-up {
-  @media (min-width: 1200px) {
-    @content;
-  }
-}
+
 
 //scale: 1.333
 $responsive-phone: (
-  base-font-size: 1.1rem,
+  base-font-size: 1rem,
   base-font-scale: (
     3.157,
     2.369,
@@ -49,14 +42,14 @@ $responsive-tablet: (
 );
 
 
-//scale 1.45
+//scale 1.5
 $responsive-desktop: (
-  base-font-size: 1.4rem,
+  base-font-size: 1.3rem,
   base-font-scale: (
-    4.421,
-    3.049,
-    2.103,
-    1.45,
+    5.063,
+    3.375,
+    2.25,
+    1.5,
     1,
     1
   ),

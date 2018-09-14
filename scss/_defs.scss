@@ -27,7 +27,7 @@ $em: 18px;
 
 // fonts
 $serif: 'Century Schoolbook', serif;
-$sans-serif: 'Gill Sans', 'Gill Sans MT', sans-serif;
+$sans-serif: 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
 $monospace: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 
 // colors
@@ -52,29 +52,16 @@ $yellow: #ffc;
 // responsive
 $mobile-width: 767px;
 
-%sans-serif {
-  font-family: $sans-serif;
-  // font-size: $em;
-  // font-stretch: normal;
-  // font-style: normal;
-  // font-weight: 400;
-  // line-height: 1.65 * $em;
+
+
+
+@mixin for-tablet-up {
+  @media (min-width: 600px) {
+    @content;
+  }
 }
-
-// %serif {
-//   font-family: $serif;
-//   // font-size: $em;
-//   // font-stretch: normal;
-//   // font-style: normal;
-//   // font-weight: 400;
-//   // line-height: 1.65 * $em;
-// }
-
-// %monospace {
-//   font-family: $monospace;
-//   // font-size: $em;
-//   // font-stretch: normal;
-//   // font-style: normal;
-//   // font-weight: 400;
-//   // line-height: 1.65 * $em;
-// }
+@mixin for-desktop-up {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}

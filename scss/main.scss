@@ -22,17 +22,19 @@
 
 @import "normalize";
 
+@import 'defs';
+
 @import 'shevy';
 
-@import 'defs';
 @import 'tables';
 
 @import 'pre';
 @import 'headings';
 @import 'typography';
-@import 'grid';
+
 @import 'responsive';
 @import 'forms';
 
+@import 'grid';
 
 @import "prism";

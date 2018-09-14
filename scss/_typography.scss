@@ -55,6 +55,15 @@ hr {
   background: $primary;
 }
 
+figcaption {
+  color: $site-text-grey;
+  margin-top: bs(0.5);
+  font-size: 80%;
+}
+
+dt {
+  font-weight: 600;
+}
 /*
 a {
   color: $blue;

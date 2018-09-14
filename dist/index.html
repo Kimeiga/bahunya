@@ -15,15 +15,13 @@
 <body>
   <header>
     <nav>
-
       <h1><a href="#">BAHUNYA</a></h1>
-
-
+      <input type="checkbox" id="menu-toggle">
+      <label for="menu-toggle">&#9776;</label>
       <a href="#">STARTUP</a>
       <a href="#">MINIMAL</a>
       <a href="#">BOLD</a>
       <a href="#">DOCS</a>
-
     </nav>
     <h1>Bahunya</h1>
     <p>10KB <b>classless</b> CSS framework with responsive typography, navbar, syntax highlighting, and much more.</p>
@@ -59,6 +57,7 @@
         <a href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fyegor256.github.io%2Ftacit%2F&amp;profile=css3">CSS</a>.
       </p>
       <h2>Forms</h2>
+      <button>Hello</button>
       <form method="get" action="#">
         <fieldset>
           <legend>Here is a simple form with <code>&lt;fieldset&gt;</code>:</legend>
@@ -71,7 +70,7 @@
             <option value="female">female</option>
             <option value="male">male</option>
           </select>
-          Your age:
+          <label for="age">Your age:</label>
           <label><input type="radio" id="under" name="age" value="under"> I'm under 18</label>
           <label><input type="radio" id="over" name="age" value="over"> I'm over 18</label>
           <label><input type="checkbox" id="over" name="age" value="over"> asdfasfd</label>
@@ -232,7 +231,6 @@
           <dl>
             <dt>Banana</dt>
             <dd>A yellow fruit that is easy to peel.</dd>
-            <dd>Which also grows on a tree.</dd>
             <dt>Cashew</dt>
             <dd>A tan nut without a peel.</dd>
             <dt>Cherry</dt>
@@ -260,7 +258,7 @@
   </main>
   <footer>
     <p>
-      <small>Made by <a href="http://www.yegor256.com">Yegor Bugayenko</a>, 2015-2018</small>
+      Made by <a href="http://www.yegor256.com">Yegor Bugayenko</a>, 2015-2018
     </p>
     <nav>
 
