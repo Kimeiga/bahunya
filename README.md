@@ -1,10 +1,10 @@
-# Bahunya
-
-10KB classless CSS framework with responsive typography, navbar, syntax highlighting, and much more!
-
 <p align="center">
   <img src="bahunya-logo.png" alt="bahunya logo">
 </p>
+
+# Bahunya
+
+10KB classless CSS framework with responsive typography, navbar, syntax highlighting, and much more!
 
 ## To develop locally:
 
