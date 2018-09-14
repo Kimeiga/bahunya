@@ -8,7 +8,7 @@
 
 ## To use:
 
-Just include the following to your `head`
+Just include the following in your `head`
 
 ```html
 <link rel="stylesheet" href="https://cdn.rawgit.com/kimeiga/bahunya/css/bahunya-0.1.1.css" />
