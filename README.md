@@ -6,6 +6,18 @@
 
 10KB classless CSS framework with responsive typography, navbar, syntax highlighting, and much more!
 
+## To use:
+
+Just include the following to your `head`
+
+```html
+<link rel="stylesheet" href="https://cdn.rawgit.com/kimeiga/bahunya/css/bahunya-0.1.1.css" />
+```
+
+Visit the [website](https://kimeiga.github.io/bahunya/) for instructions on activating the navbar and syntax highlighting.
+
+If you have semantically correct html, it should just work! No CSS classes needed :).
+
 ## To develop locally:
 
 `npm start`
