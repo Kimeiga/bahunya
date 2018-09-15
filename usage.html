@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="keywords" content="css, html5, css framework" />
+  <meta name="description" content="10KB Classless CSS Framework" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Bahunya - Usage</title>
+  <link rel="icon" type="image/png" href="./bahunya-logo.png" />
+  <!-- <link rel="stylesheet" href="//basehold.it/24"> -->
+</head>
+
+<body>
+  <header>
+    <nav>
+      <h1><a href="/">BAHUNYA</a></h1>
+      <input type="checkbox" id="menu-toggle">
+      <label for="menu-toggle">&#9776;</label>
+			<a href="./installation.html">INSTALLATION</a>
+			<a href="./usage.html">USAGE</a>
+      <a href="./customization.html">CUSTOMIZATION</a>
+      <a href="https://github.com/Kimeiga/bahunya" target="_blank">GITHUB</a>
+    </nav>
+    <h1>Bahunya Usage</h1>
+  </header>
+  <main>
+    <article>
+			<p>In order to utilize Bahunya correctly, you have to write semantically correct HTML (that's it :) ). However, Bahunya made certain decisions about correct HTML that you will have to know to use it.</p>
+			<h2>Listless Navigation</h2>
+			<p>You'll notice that Bahunya's navbar only works with a listless navigation (one without <code>ul</code> and <code>li</code>
+				elements). This is because people with screen readers find it <a href="https://css-tricks.com/navigation-in-lists-to-be-or-not-to-be/"
+				 target="_blank">easier to navigate listless navigation</a> as the screen reader peruses it quicker than a listful
+				(?) navigation.</p>
+			<p>Your markup should look like the following. An <code>&lt;h1&gt;</code> containing an anchor tag for the site
+				title, and then the anchor tags for the links and the hamburger menu. </p>
+			<pre><code class="language-markup">&#x3C;body&#x3E;
+  &#x3C;header&#x3E;
+    &#x3C;nav&#x3E;
+      &#x3C;h1&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;BAHUNYA&#x3C;/a&#x3E;&#x3C;/h1&#x3E;
+      &#x3C;input type=&#x22;checkbox&#x22; id=&#x22;menu-toggle&#x22;&#x3E;
+      &#x3C;label for=&#x22;menu-toggle&#x22;&#x3E;&#x26;#9776;&#x3C;/label&#x3E;
+      &#x3C;a href=&#x22;#&#x22;&#x3E;STARTUP&#x3C;/a&#x3E;
+      &#x3C;a href=&#x22;#&#x22;&#x3E;MINIMAL&#x3C;/a&#x3E;
+      &#x3C;a href=&#x22;#&#x22;&#x3E;BOLD&#x3C;/a&#x3E;
+      &#x3C;a href=&#x22;https://github.com/Kimeiga/bahunya&#x22; target=&#x22;_blank&#x22;&#x3E;GITHUB&#x3C;/a&#x3E;
+&#x3C;/nav&#x3E;</code></pre>
+			<h2>HTML Structure</h2>
+			<p>Bahunya uses the following HTML semantic hierarchy.</p>
+			<pre><code class="lang-markup">&#x3C;!DOCTYPE html&#x3E;
+&#x3C;html&#x3E;
+&#x3C;head&#x3E;
+	&#x3C;link rel=&#x22;stylesheet&#x22; href=&#x22;https://cdn.rawgit.com/kimeiga/bahunya/css/bahunya-0.1.1.css&#x22;/&#x3E;
+&#x3C;/head&#x3E;
+
+&#x3C;body&#x3E;
+	
+	&#x3C;header&#x3E;
+		&#x3C;nav&#x3E;
+			&#x3C;h1&#x3E;&#x3C;a href=&#x22;/&#x22;&#x3E;SITE_TITLE&#x3C;/a&#x3E;&#x3C;/h1&#x3E;
+&#x9;&#x9;&#x9;&#x3C;a href=&#x22;/page-1.html&#x22;&#x3E;PAGE-1&#x3C;/a&#x3E;
+		&#x3C;/nav&#x3E;
+		&#x3C;h1&#x3E;SITE-TITLE&#x3C;/h1&#x3E;
+	&#x3C;/header&#x3E;
+	
+	&#x3C;main&#x3E;
+		&#x3C;article&#x3E;
+&#x9;&#x9;&#x9;&#x3C;h2&#x3E;Stuff&#x3C;/h2&#x3E;
+&#x9;&#x9;&#x9;
+&#x9;&#x9;&#x9;&#x3C;section&#x3E;
+&#x9;&#x9;&#x9;&#x9;&#x3C;h3&#x3E;Section of stuff&#x3C;/h3&#x3E;
+&#x9;&#x9;&#x9;&#x3C;/section&#x3E;
+&#x9;&#x9;&#x9;
+		&#x3C;/article&#x3E;
+	&#x3C;/main&#x3E;
+	
+	&#x3C;footer&#x3E;
+		&#x3C;p&#x3E;Copyright&#x3C;/p&#x3E;
+		&#x3C;nav&#x3E;
+			&#x3C;a href=&#x22;/somewhere&#x22;&#x3E;Somewhere&#x3C;/a&#x3E;
+			&#x3C;a href=&#x22;/somewhere-else&#x22;&#x3E;Somewhere else&#x3C;/a&#x3E;
+		&#x3C;/nav&#x3E;
+	&#x3C;/footer&#x3E;
+	
+&#x3C;/body&#x3E;
+&#x3C;/html&#x3E;</code></pre>
+			<p>Bahunya is following the <a href="https://www.semrush.com/blog/semantic-html5-guide/">Semrush Semantic HTML5 guide</a>.</p>
+			<p>As you can see, there's a <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, and <code>&lt;footer&gt;</code>. Inside the header, there's a <code>&lt;nav&gt;</code> that is rendered to a navbar, and the rest is an actual header of the page.</p>
+			<p>The <code>&lt;main&gt;</code> contains the body of the content. The <code>&lt;article&gt;</code> tag is good semantics, so I recommend using it. It just makes the width of the main body smaller. If you want sub-sections of the content, use <code>&lt;section&gt;</code> tags.</p>
+      
+    </article>
+  </main>
+  <footer>
+    <p>
+      Created by <a href="http://www.kimei.ga">Hakan Alpay</a>, 2018
+		</p>
+		<p>Inspired by <a href="https://yegor256.github.io/tacit/">Tacit</a>, a classless CSS framework</p>
+    <nav>
+			<a href="https://github.com/kimeiga/bahunya">GitHub Repo</a>
+			<a href="https://opensource.org/licenses/MIT">MIT license</a>
+      <a href="https://github.com/Kimeiga/bahunya/blob/css/bahunya-0.1.1.css">Download CSS</a>
+    </nav>
+  </footer>
+
+  <script src="prism.js"></script>
+
+</body>
+
+</html>

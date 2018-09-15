@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 //
-// Copyright (c) 2015-2018 Yegor Bugayenko
+// Copyright (c) 2018 Hakan Alpay
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -28,16 +28,15 @@ th {
 
 td,
 th {
-  border-bottom: (.06 * $em) solid $gray;
+  border-bottom: 1px solid $gray;
   overflow: auto;
-  padding: .825 * $em $em;
+  padding: bs(0.5);
   text-align: left;
   vertical-align: top;
 }
 
 thead th {
-  border-bottom-width: .12 * $em;
-  padding-bottom: .35 * $em;
+  border-bottom: 1px solid $primary;
 }
 
 table {

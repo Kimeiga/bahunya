@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 //
-// Copyright (c) 2015-2018 Yegor Bugayenko
+// Copyright (c) 2018 Hakan Alpay
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -22,14 +22,18 @@
 
 * {
   border: 0;
-  border-collapse: separate;
-  border-spacing: 0;
+  // border-collapse: separate;
+  // border-spacing: 0;
   box-sizing: border-box;
   // margin: 0;
+  // max-width: 100%;
+  // outline: 0;
+  // padding: 0;
+  // vertical-align: baseline;
+}
+
+img {
   max-width: 100%;
-  outline: 0;
-  padding: 0;
-  vertical-align: baseline;
 }
 
 
@@ -110,14 +114,18 @@ header label {
 }
 
 
+// html {
+//   overflow-y: scroll;
+// }
+
 header {
-  
 
   padding: bs(3) bs(1) bs(2);
   width: bs(25);
   margin: 0 auto;
   text-align: center;
-  // background: #000;
+  
+  max-width: 100%;
 
   display: flex;
   align-items: center;
@@ -133,7 +141,7 @@ header {
   nav {
     position: fixed; /* Set the navbar to fixed position */
     top: 0; /* Position the navbar at the top of the page */
-    // left: 0;
+    left: 0;
     width: 100vw; /* Full width */
     padding: bs(0.5) calc(calc(50vw - 37rem) + #{bs(1)});
     // width: 74rem;
@@ -146,7 +154,6 @@ header {
 
     // display: flex;
 
-    font-family: $sans-serif;
     font-weight: 200;
 
     text-align: right;
@@ -158,7 +165,6 @@ header {
       margin: 0 bs(1);
       // margin-left: bs(1);
 
-      font-family: $sans-serif;
 
       text-align: left;
     }
@@ -253,6 +259,7 @@ footer nav {
 
 article{
   // padding: 2.4 * $em;
+  max-width: 100%;
   padding: bs(1);
 }
 
@@ -289,7 +296,8 @@ nav {
 */
 ol,
 ul {
-  margin-left: 1.75 * $em;
+  // margin-left: 1.75 * $em;
+  margin-top: 0;
 }
 
 // li {
@@ -337,13 +345,15 @@ blockquote {
   border-left: 1px solid $primary;
   // padding: (.25 * $em) $em (.25 * $em) (.88 * $em);
   padding: 0 bs(1);
+  margin: bs(1) 0 bs(1) bs(1);
 
   footer {
     background: none;
     display: block;
     color: $site-text-grey;
     padding: bs(0.5) 0;
-    font-size: 80%;
+    font-size: 90%;
+    text-align: start;
     // color: $gray;
     // // font-size: .75 * $em;
     // margin: 0;

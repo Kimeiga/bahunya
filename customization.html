@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="keywords" content="css, html5, css framework" />
+	<meta name="description" content="10KB Classless CSS Framework" />
+	<link rel="stylesheet" href="style.css" />
+	<title>Bahunya - Customization</title>
+	<link rel="icon" type="image/png" href="./bahunya-logo.png" />
+</head>
+
+<body>
+	<header>
+		<nav>
+			<h1><a href="/">BAHUNYA</a></h1>
+			<input type="checkbox" id="menu-toggle">
+			<label for="menu-toggle">&#9776;</label>
+			<a href="./installation.html">INSTALLATION</a>
+			<a href="./usage.html">USAGE</a>
+			<a href="./customization.html">CUSTOMIZATION</a>
+			<a href="https://github.com/Kimeiga/bahunya" target="_blank">GITHUB</a>
+		</nav>
+		<h1>Bahunya Customization</h1>
+	</header>
+	<main>
+		<article>
+			<p>Bahunya is easy to customize! Just overwrite the default styles with your own CSS for custom fonts and colors. If
+				you want to customize the modular text sizes, the breakpoints, or something more drastic, you're probably better
+				off forking the <a href="https://github.com/Kimeiga/bahunya" target="_blank">Github repo</a> and customizing the
+				SCSS yourself!</p>
+			<h3>Colors and Fonts</h3>
+			<h4>Why a dark scheme?</h4>
+			<p>Why does Bahunya use white text on a dark background? Recent extensive <a href="https://www.nature.com/articles/s41598-018-28904-x">German
+					opthamology research</a> concluded that reading dark text on a light background thins the <a href="https://en.wikipedia.org/wiki/Choroid">choroid</a>,
+				the vascular layer of the eye, contributing to myopia, while reading light text on a dark background increases the
+				thickness of the choroid. As such, Bahunya ships with dark text on a bright background for <em>opthamological
+					safety</em>, but feel free to change it.</p>
+			<h4>Primary Color</h4>
+			<p>Bahunya uses <code>#E7BF60</code> <mark>gold</mark> as a primary color. To change this color to what you like,
+				use the following CSS</p>
+			<pre><code class="language-css">:root {
+  --primary: #YOUR_COLOR;
+  --primary-dark: #YOUR_COLOR_BUT_DARKER;
+}
+
+input[type=submit],
+button[type=submit],
+button:not([disabled]) {
+  background: var(--primary);
+}
+input[type=submit]:hover,
+button[type=submit]:hover,
+button:not([disabled]):hover {
+  background: var(--primary-dark);
+}
+
+dd + dt {
+  border-top: 1px solid var(--primary);
+}
+
+blockquote {
+  border-left: 1px solid var(--primary);
+}
+
+mark {
+  background: var(--primary);
+}
+
+a {
+  color: var(--primary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}</code></pre>
+			<p>That should restyle all the elements that had the primary color on them.</p>
+			<h4>Fonts</h4>
+			<p>Bahunya uses Century Schoolbook as its serif heading font, Lucida Sans as its sans serif body font, and Monaco as
+				its monospaced font. To customize these, use the following CSS selectors.</p>
+			<pre><code class="lang-css">h1, h2, h3, h4, h5, h6, header nav a {
+	font-family: YOUR_HEADING_FONT;
+}
+
+body {
+	font-family: YOUR_BODY_FONT;
+}
+
+pre, code, kbd {
+	font-family: YOUR_MONOSPACE_FONT;
+}
+</code></pre>
+		</article>
+	</main>
+	<footer>
+		<p>
+			Created by <a href="http://www.kimei.ga">Hakan Alpay</a>, 2018
+		</p>
+		<p>Inspired by <a href="https://yegor256.github.io/tacit/">Tacit</a>, a classless CSS framework</p>
+		<nav>
+			<a href="https://github.com/kimeiga/bahunya">GitHub Repo</a>
+			<a href="https://opensource.org/licenses/MIT">MIT license</a>
+			<a href="https://github.com/Kimeiga/bahunya/blob/css/bahunya-0.1.1.css">Download CSS</a>
+		</nav>
+	</footer>
+
+	<script src="prism.js"></script>
+
+</body>
+
+</html>

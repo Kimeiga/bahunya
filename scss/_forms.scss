@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 //
-// Copyright (c) 2015-2018 Yegor Bugayenko
+// Copyright (c) 2018 Hakan Alpay
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -23,7 +23,7 @@
 @import 'defs';
 
 form { 
-  padding: bs(1);
+  padding: bs(1) bs(1) 0;
   border: solid #202020;
   border-width: 0.2rem;
   margin-bottom: bs(1);
@@ -36,7 +36,6 @@ form {
 fieldset {
 
   legend {
-    // margin: $em 0;
     font-size: 150%;
     margin-bottom: bs(.5);
   }
@@ -50,11 +49,11 @@ input,
 textarea,
 select,
 button {
-  // @extend %sans-serif;
   border-radius: bs(0.2);
   display: inline-block;
   padding: bs(0.5);
 
+  max-width: 100%;
   + label,
   + input[type="checkbox"],
   + input[type="radio"] {
@@ -65,24 +64,16 @@ button {
 input,
 select,
 textarea {
-  // margin-right: .2 * $em;
   margin-bottom: bs(1);
-}
-
-option {
-  // @extend %sans-serif;
 }
 
 textarea {
   min-height: bs(5);
   min-width: bs(10);
-  //hakan
-  // min-width: 20 * $em;
 }
 
 label {
   display: inline-block;
-  // margin-bottom: .7 * $em;
 
   + * {
     page-break-before: always;
@@ -96,6 +87,11 @@ label {
 //hakan
 fieldset > * {
   display:block;
+  
+}
+
+select, input {
+  display: inline;
 }
 
 form > *:not(fieldset),
@@ -110,9 +106,6 @@ button {
   color: darken($gray, 25);
   cursor: pointer;
   display: inline-block;
-  // margin-bottom: $em;
-  // margin-right: .4 * $em;
-  // padding: .3625 * $em 1.3 * $em;
   padding: bs(0.5) bs(1);
   text-align: center;
 
@@ -172,14 +165,16 @@ textarea {
   padding: bs(0.5);
 }
 
+// input[type="radio"] + input[type="radio"],
+// input[type="checkbox"] + input[type="checkbox"] {
+//   margin-top: bs(0.5);
+// }
+
 input[type="checkbox"],
 input[type="radio"] {
   flex-grow: 0;
-  // height: 1.65 * $em;
-  margin-left: 0;
-  margin-right: bs(0.25);
-  margin-top: bs(0.25);
-  vertical-align: top;
+  margin: bs(0.5) bs(0.25) bs(0.5) 0;
+  vertical-align: middle;
 
   + label {
     page-break-before: avoid;

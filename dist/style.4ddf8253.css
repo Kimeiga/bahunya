@@ -339,22 +339,22 @@ pre {
   margin-bottom: 1.5em; }
 
 h1 {
-  font-size: 3.157rem;
-  line-height: 3.2rem;
+  font-size: 2.074rem;
+  line-height: 2.4rem;
   margin-bottom: 1.36rem; }
 
 h2 {
-  font-size: 2.369rem;
+  font-size: 1.728rem;
   line-height: 2.4rem;
   margin-bottom: 1.36rem; }
 
 h3 {
-  font-size: 1.777rem;
-  line-height: 2.4rem;
+  font-size: 1.4rem;
+  line-height: 1.6rem;
   margin-bottom: 1.36rem; }
 
 h4 {
-  font-size: 1.333rem;
+  font-size: 1.2rem;
   line-height: 1.6rem;
   margin-bottom: 1.36rem; }
 
@@ -457,15 +457,14 @@ th {
 
 td,
 th {
-  border-bottom: 1.08px solid #595959;
+  border-bottom: 1px solid #595959;
   overflow: auto;
-  padding: 14.85px 18px;
+  padding: 0.75em;
   text-align: left;
   vertical-align: top; }
 
 thead th {
-  border-bottom-width: 2.16px;
-  padding-bottom: 6.3px; }
+  border-bottom: 1px solid #E7BF60; }
 
 table {
   display: table;
@@ -507,9 +506,11 @@ mark {
 }
 
 */
-pre code:not([class]) {
-  padding: 1.5em;
-  overflow-x: scroll; }
+pre {
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace; }
+  pre code:not([class]) {
+    padding: 1.5em;
+    overflow-x: scroll; }
 
 code, kbd {
   background: #2d2d2d;
@@ -702,7 +703,7 @@ sub {
     display: table-cell; } }
 
 form {
-  padding: 1.5em;
+  padding: 1.5em 1.5em 0;
   border: solid #202020;
   border-width: 0.2rem;
   margin-bottom: 1.5em; }
@@ -722,7 +723,8 @@ select,
 button {
   border-radius: 0.3em;
   display: inline-block;
-  padding: 0.75em; }
+  padding: 0.75em;
+  max-width: 100%; }
   input + label,
   input + input[type="checkbox"],
   input + input[type="radio"],
@@ -753,6 +755,9 @@ label {
 
 fieldset > * {
   display: block; }
+
+select, input {
+  display: inline; }
 
 form > *:not(fieldset),
 fieldset > * {
@@ -816,10 +821,8 @@ textarea {
 input[type="checkbox"],
 input[type="radio"] {
   flex-grow: 0;
-  margin-left: 0;
-  margin-right: 0.375em;
-  margin-top: 0.375em;
-  vertical-align: top; }
+  margin: 0.75em 0.375em 0.75em 0;
+  vertical-align: middle; }
   input[type="checkbox"] + label,
   input[type="radio"] + label {
     page-break-before: avoid; }
@@ -829,13 +832,10 @@ select[multiple] {
 
 * {
   border: 0;
-  border-collapse: separate;
-  border-spacing: 0;
-  box-sizing: border-box;
-  max-width: 100%;
-  outline: 0;
-  padding: 0;
-  vertical-align: baseline; }
+  box-sizing: border-box; }
+
+img {
+  max-width: 100%; }
 
 body {
   font-family: "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
@@ -876,6 +876,7 @@ header {
   width: 37.5em;
   margin: 0 auto;
   text-align: center;
+  max-width: 100%;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -887,12 +888,12 @@ header {
     /* Set the navbar to fixed position */
     top: 0;
     /* Position the navbar at the top of the page */
+    left: 0;
     width: 100vw;
     /* Full width */
     padding: 0.75em calc(calc(50vw - 37rem) + 1.5em);
     font-size: 90%;
     background: rgba(255, 255, 255, 0.9);
-    font-family: "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
     font-weight: 200;
     text-align: right; }
     header nav h1 {
@@ -900,7 +901,6 @@ header {
       font-size: inherit;
       line-height: inherit;
       margin: 0 1.5em;
-      font-family: "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
       text-align: left; }
     header nav a {
       font-weight: 700;
@@ -943,6 +943,7 @@ footer nav {
   font-size: 90%; }
 
 article {
+  max-width: 100%;
   padding: 1.5em; }
 
 article {
@@ -977,7 +978,7 @@ nav {
 */
 ol,
 ul {
-  margin-left: 31.5px; }
+  margin-top: 0; }
 
 li dl,
 li ol,
@@ -1000,13 +1001,15 @@ dd {
 
 blockquote {
   border-left: 1px solid #E7BF60;
-  padding: 0 1.5em; }
+  padding: 0 1.5em;
+  margin: 1.5em 0 1.5em 1.5em; }
   blockquote footer {
     background: none;
     display: block;
     color: #ccc;
     padding: 0.75em 0;
-    font-size: 80%; }
+    font-size: 90%;
+    text-align: start; }
 
 img {
   height: auto;

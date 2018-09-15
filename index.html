@@ -15,159 +15,137 @@
 <body>
   <header>
     <nav>
-      <h1><a href="#">BAHUNYA</a></h1>
+      <h1><a href="/">BAHUNYA</a></h1>
       <input type="checkbox" id="menu-toggle">
       <label for="menu-toggle">&#9776;</label>
-      <a href="#customization">CUSTOMIZATION</a>
-      <a href="#">MINIMAL</a>
-      <a href="#">BOLD</a>
+      <a href="./installation.html">INSTALLATION</a>
+      <a href="./usage.html">USAGE</a>
+      <a href="./customization.html">CUSTOMIZATION</a>
       <a href="https://github.com/Kimeiga/bahunya" target="_blank">GITHUB</a>
     </nav>
     <h1>Bahunya</h1>
     <p>10KB <b>classless</b> CSS framework with responsive typography, navbar, syntax highlighting, and much more.</p>
+    <small><code>0.1.2</code></small>
     <img src="./bahunya-logo.svg" alt="tacit logo" style="max-height: 600px;" />
   </header>
   <main>
     <article>
       <p>
-        <strong>Bahunya</strong> is a CSS framework (like Bootstrap) with <mark>no classes</mark>. This means that as long as you write semantically correct HTML and include the minified <b>(10kb)</b> version of this framework, your website will look like this! Just include the following to your <code>&lt;head&gt;</code>
+        <strong>Bahunya</strong> is a CSS framework (like Bootstrap) with <mark>no classes</mark>. This means that as
+        long as you write semantically correct HTML and include the minified <b>(10kb)</b> version of this framework,
+        your website will look like this! Just include the following in your <code>&lt;head&gt;</code>
       </p>
       <pre><code class="language-markup">&lt;link rel="stylesheet" href="https://cdn.rawgit.com/kimeiga/bahunya/css/bahunya-0.1.1.css"/&gt;</code></pre>
       <p>
-        Bahunya will work out of the box on <a href="http://www.w3.org/TR/html5/">HTML5</a> compliant websites, but can be easily customized with custom CSS and CSS classes.
+        Bahunya will work out of the box on <a href="http://www.w3.org/TR/html5/">HTML5</a> compliant websites, but can
+        be easily customized with custom CSS and CSS classes.
       </p>
+      <p>To use a hamburger menu navbar, or activate syntax highlighting, head to <a href="./installation.html">Installation</a>.</p>
+      <p>To customize colors and fonts, head to <a href="./customization.html">Customization</a>.</p>
       <hr>
       <p>
-        Follow along the source code of this page! Press <kbd>ctrl shift i</kbd> on Windows to open Devtools on Chromium browsers.
+        Follow along the source code of this page! Press <kbd>ctrl shift i</kbd> on Windows to open Devtools on
+        Chromium browsers.
       </p>
-      <h2 id="customization">Customization</h2>
-      <h3>Navbar</h3>
-      <p>Bahunya has a custom navbar that you can drop in or take out; your preference!</p>
-      <p>Just drop the following html elements into your <mark>header's nav</mark>, and it will convert your text-based navbar to a navbar with a hamburger menu like this site. This solution uses no JavaScript, just the checkbox hack</p>
-      <pre><code class="language-markup">&#x3C;input type=&#x22;checkbox&#x22; id=&#x22;menu-toggle&#x22;&#x3E;
-&#x3C;label for=&#x22;menu-toggle&#x22;&#x3E;&#x26;#9776;&#x3C;/label&#x3E;</code></pre>
-      <p>The first element is the invisible checkbox that controls the visibility of the dropdown menu. The second element is the hamburger icon itself, using the popular <a href="https://en.wiktionary.org/wiki/☰"  target="_blank">trigram for heaven</a> symbol</p>
-      <p>You'll notice that Bahunya's navbar only works with a listless navigation (one without <code>ul</code> and <code>li</code> elements). This is because people with screen readers find it <a href="https://css-tricks.com/navigation-in-lists-to-be-or-not-to-be/" target="_blank">easier to navigate listless navigation</a> as the screen reader peruses it quicker than a listful (?) navigation.</p>
-      <p>Your markup should look like the following. An <code>&lt;h1&gt;</code> containing an anchor tag for the site title, and then the anchor tags for the links and the hamburger menu. </p>
-      <pre><code class="language-markup">&#x3C;body&#x3E;
-  &#x3C;header&#x3E;
-    &#x3C;nav&#x3E;
-      &#x3C;h1&#x3E;&#x3C;a href=&#x22;#&#x22;&#x3E;BAHUNYA&#x3C;/a&#x3E;&#x3C;/h1&#x3E;
-      &#x3C;input type=&#x22;checkbox&#x22; id=&#x22;menu-toggle&#x22;&#x3E;
-      &#x3C;label for=&#x22;menu-toggle&#x22;&#x3E;&#x26;#9776;&#x3C;/label&#x3E;
-      &#x3C;a href=&#x22;#&#x22;&#x3E;STARTUP&#x3C;/a&#x3E;
-      &#x3C;a href=&#x22;#&#x22;&#x3E;MINIMAL&#x3C;/a&#x3E;
-      &#x3C;a href=&#x22;#&#x22;&#x3E;BOLD&#x3C;/a&#x3E;
-      &#x3C;a href=&#x22;https://github.com/Kimeiga/bahunya&#x22; target=&#x22;_blank&#x22;&#x3E;GITHUB&#x3C;/a&#x3E;
-    &#x3C;/nav&#x3E;</code></pre>
-      <h3>Syntax Highlighting</h3>
-      <p>Bahunya uses <a href="https://prismjs.com/" target="_blank">Prism JS</a> for syntax highlighting within <code>&lt;pre&gt;&lt;code&gt;</code> tags. Prism requires a CSS file and a JS file to operate. The CSS file is included in Bahunya (it's tiny), but the JS you'll have to import. Just add the following to your <code>&lt;body&gt;</code>.</p>
-      <pre><code class="lang-markup">&#x3C;script src=&#x22;https://cdn.rawgit.com/Kimeiga/bahunya/26313661/prism.js&#x22;&#x3E;&#x3C;/script&#x3E;</code></pre>
-      <p>In order to activate Prism on a pre-code tag, add one of the following classes on the <code>&lt;code&gt;</code> tag, not the containing <code>&lt;pre&gt;</code> tag.</p>
-      <dl>
-        <dt>HTML (Markup)</dt>
-        <dd><code>class="lang-markup"</code></dd>
-        <dt>CSS</dt>
-        <dd><code>class="lang-css"</code></dd>
-        <dt>C-like</dt>
-        <dd><code>class="lang-clike"</code></dd>
-        <dt>JavaScript</dt>
-        <dd><code>class="lang-javascript"</code></dd>
-      </dl>
-      <p>To get more languages, head to <a href="https://prismjs.com/download.html#themes=prism-okaidia&languages=markup+css+clike+javascript">Prism's download page</a>, select more languages, and then include the provided JavaScript file in your website (instead of Bahunya's)</p>
-      <p>Bahunya uses the <a href="https://github.com/ocodia/okaidia-prismjs-theme">Okaidia theme</a> which is based on Monokai. It's the smallest Prism theme in filesize at <mark>1.75KB</mark></p>
-      <h3>Colors and Fonts</h3>
-      <h4>Why a dark scheme?</h4>
-      <p>Why does Bahunya use white text on a dark background? Recent extensive <a href="https://www.nature.com/articles/s41598-018-28904-x">German opthamology research</a> concluded that reading dark text on a light background thins the <a href="https://en.wikipedia.org/wiki/Choroid">choroid</a>, the vascular layer of the eye, contributing to myopia, while reading light text on a dark background increases the thickness of the choroid. As such, Bahunya ships with dark text on a bright background for <em>opthamological safety</em>, but feel free to change it.</p>
-      <h4>Primary Color</h4>
-      <p>Bahunya uses <code>#E7BF60</code> <mark>gold</mark> as a primary color. To change this color to what you like, use the following CSS</p>
-      <pre><code class="language-css">:root {
-  --primary: #YOUR_COLOR;
-  --primary-dark: #YOUR_COLOR_BUT_DARKER;
-}
-
-input[type=submit],
-button[type=submit],
-button:not([disabled]) {
-  background: var(--primary);
-}
-input[type=submit]:hover,
-button[type=submit]:hover,
-button:not([disabled]):hover {
-  background: var(--primary-dark);
-}
-
-dd + dt {
-  border-top: 1px solid var(--primary);
-}
-
-blockquote {
-  border-left: 1px solid var(--primary);
-}
-
-mark {
-  background: var(--primary);
-}
-
-a {
-  color: var(--primary);
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--primary);
-}</code></pre>
-      <p>That should restyle all the elements that had the primary color on them.</p>
       <p>
-        By the way, Tacit is compliant with W3C validator requirements:
-        <a href="https://validator.w3.org/check?uri=https%3A%2F%2Fyegor256.github.io%2Ftacit%2F&amp;doctype=Inline">HTML</a>
+        Bahunya complies with W3C validator requirements for
+        <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fkimeiga.github.io%2Fbahunya">HTML</a>
         and
-        <a href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fyegor256.github.io%2Ftacit%2F&amp;profile=css3">CSS</a>.
+        <a href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fkimeiga.github.io%2Fbahunya&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en">CSS</a>.
+        <p>
+          <a href="https://jigsaw.w3.org/css-validator/check/referer">
+            <img style="border:0;width:88px;height:31px" src="https://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!" />
+          </a>
+        </p>
       </p>
-      <h2>Forms</h2>
-      <button>Hello</button>
+      <h2>Typography</h2>
+      <h1>This is an &lt;h1&gt;</h1>
+      <p>Try using this as a title once per page.</p>
+      <h2>This is an &lt;h2&gt;</h2>
+      <p>Try using these as sections of the content.</p>
+      <h3>This is an &lt;h3&gt;</h3>
+      <p>Use these as sub-section headers.</p>
+      <h4>This is an &lt;h4&gt;</h4>
+      <p>And so on.</p>
+      <h5>This is an &lt;h5&gt;</h5>
+      <p>And so on.</p>
+      <h6>This is an &lt;h6&gt;</h6>
+      <p>&lt;h5&gt; and &lt;h6&gt; are the same size as body copy.</p>
+      <mark>This is marked text.</mark>
+      <b>This is bold,</b><em> and this is italic.</em>
+      <p>This is <sup>superscript</sup> and this is <sub>subscript</sub>.</p>
+      <p>Here's a blockquote!</p>
+      <blockquote>
+        There are 7 days in a week and <em>someday</em> isn't one of them.
+        <footer>&mdash; Benny Lewis</footer>
+      </blockquote>
+      <h3>Responsive Typography</h3>
+      <p>Bahunya uses <a href="https://kyleshevlin.github.io/shevy/">Shevy</a> to create and maintain <a href="https://zellwk.com/blog/why-vertical-rhythms/">vertical
+          rhythm</a> throughout the webpage for opimum aesthetics and legibility, and create a <a href="https://www.modularscale.com/">modular
+          typographic scale</a> for the headings.</p>
+      <p>On mobile, the modular type scale factor is 1.2. On tablet, 1.414. On desktop, 1.5. This means that the <code>&lt;h1&gt;</code>
+        tags are 2.074rem, 3.998rem, and 5.063rem on mobile, tablet, and desktop respectively. By decreasing the base
+        font size and heading contrast as the screen size decreases, we ensure that all copy easily fits in the
+        viewport and is easily readable.</p>
+      <p>Go ahead, resize the window!</p>
+
+      <h2>Images</h2>
+      <p>Here's an image inside a &lt;figure&gt; with a corresponding &lt;figcaption&gt;</p>
+      <figure>
+        <img src="https://placeimg.com/1000/500/people?t=1536453942158" alt="1000px x 500px placeholder image" />
+        <figcaption>A random 1000px x 500px image of a person</figcaption>
+      </figure>
+      <p>Here's the same image but just using a &lt;img&gt; tag</p>
+      <img src="https://placeimg.com/1000/500/people?t=1536453942158" alt="1000px x 500px placeholder image" />
+
+      <h2>Code</h2>
+      <p>With the Prism add-in (see <a href="./installation.html">Installation</a>), Bahunya supports HTML, CSS, C-like, and JavaScript.</p>
+      <p>Here's a &lt;code&gt; tag:</p>
+      <code>Dünya varmış!</code>
+      <p>Here's a <code>&lt;pre&gt;</code> with no <code>&lt;code&gt;</code> inside:</p>
+      <pre>
+        I love eating peppers.
+        You           guacamole.
+        too           coconuts.
+               writing poetry.
+               what?
+
+               then.
+               ok???
+      </pre>
+      <p>Here's a snippet of highlighted JavaScript using a <code>&lt;pre&gt;</code> with a <code>&lt;code&gt;</code> inside:</p>
+      <pre><code class="lang-javascript">function $initHighlight(block, cls) {
+  try {
+    if (cls.search(/\bno\-highlight\b/) != -1)
+      return process(block, true, 0x0F) +
+              ` class="${cls}"`;
+  } catch (e) {
+    /* handle exception */
+  }
+  for (var i = 0 / 2; i < classes.length; i++) {
+    if (checkCondition(classes[i]) === undefined)
+      console.log('undefined');
+  }
+}
+
+export  $initHighlight;</code></pre>
+      <p>Here's a keyboard command using <code>&lt;kbd&gt;</code>:</p>
+      <kbd>ctrl + alt + del</kbd>
+
+      <h2>Buttons and Forms</h2>
+      <p>Here are some buttons, enabled and disabled!</p>
+      <button>Selam</button><button disabled>Merhaba</button>
+      <p>Here's a form without <code>&lt;fieldset&gt;</code>:</p>
+      <form>
+        <label>Teleport to:</label><input type="text" size="10" placeholder="i.e. Istanbul" /><button type="submit">Teleport</button>
+      </form>
       <form method="get" action="#">
         <fieldset>
-          <legend>Here is a simple form with <code>&lt;fieldset&gt;</code>:</legend>
-          <label for="email">Your email:</label>
-          <small>Must be unique</small>
-          <input name="email" type="text" id="email" size="25" placeholder="must be unique" />
-          <label for="sex">Your gender:</label>
-          <select name="sex" id="sex">
-            <option value="none">don't want to say</option>
-            <option value="female">female</option>
-            <option value="male">male</option>
-          </select>
-          <label for="age">Your age:</label>
-          <label><input type="radio" id="under" name="age" value="under" /> I'm under 18</label>
-          <label><input type="radio" id="over" name="age" value="over" /> I'm over 18</label>
-          <label><input type="checkbox" id="over" name="age" value="over" /> asdfasfd</label>
-          <label for="food">Your favorite food:</label>
-          <select multiple="multiple" name="food" id="food">
-            <optgroup label="Italian">
-              <option value="1">Pizza</option>
-              <option value="2">Spaghetti</option>
-            </optgroup>
-            <optgroup label="Asian">
-              <option value="4">Sushi</option>
-            </optgroup>
-            <option value="3">Hamburger</option>
-            <option value="5">Borsht</option>
-          </select>
-          <label for="address">Your full address:</label>
-          <textarea name="address" id="address" placeholder="PO box is not allowed"></textarea>
-          <label><input type="checkbox" name="consent" id="consent" value="test" />I agree with all possible terms and conditions</label>
-          <button type="submit">Subscribe</button>
-          <button type="reset">Reset</button>
-          <button disabled>Can't click</button>
-        </fieldset>
-      </form>
-
-      <form action="#">
-        <fieldset>
-          <legend>Personal</legend>
+          <legend>Here is a form with <code>&lt;fieldset&gt;</code>:</legend>
+          <h3>Personal</h3>
           <label for="name">Name</label>
-          <input type="text" name="name" placeholder="John Doe">
-          <label for="date-of-birth">Date of Birth</label>
+          <input name="name" type="text" id="name" size="25" />
+          <label>Date of Birth</label>
           <select name="month-of-birth">
             <option selected disabled hidden>Month</option>
             <option value="01">January</option>
@@ -225,130 +203,136 @@ a {
             <option value="2001">2001</option>
             <option value="2002">2002</option>
           </select>
-          <legend>Account</legend>
-          <input type="email" name="email">
+          <label for="sex">Gender</label>
+          <select name="sex" id="sex">
+            <option value="none">prefer not to say</option>
+            <option value="non-binary">non-binary</option>
+            <option value="female">female</option>
+            <option value="male">male</option>
+          </select>
+          <label for="animal">Favorite Animal</label>
+          <select multiple="multiple" name="animal" id="animal">
+            <optgroup label="Felines">
+              <option value="1">House Cat</option>
+              <option value="2">Lion</option>
+            </optgroup>
+            <optgroup label="Fish">
+              <option value="4">Goldfish</option>
+              <option value="4">Swordfish</option>
+            </optgroup>
+            <option value="3">Elephant</option>
+            <option value="5">Llama</option>
+          </select>
+          <h3>Account</h3>
+          <label for="email">Email</label>
+          <small>Must be unique</small>
+          <input name="email" type="text" id="email" size="25" />
+          <label for="password">Password</label>
+          <input name="password" type="password" id="password" size="25" />
+          <label for="address">Address</label>
+          <textarea name="address" id="address" placeholder="PO BOX ok"></textarea>
+
+          <h3>Preferences</h3>
+          <label>Color Preference</label>
+          <label><input type="radio" id="yellow" name="age" value="yellow" /> I prefer yellow</label>
+          <label><input type="radio" id="gold" name="age" value="gold" /> I prefer gold</label>
+          <label><input type="radio" id="yellow-orange" name="age" value="yellow-orange" /> I prefer yellow-orange</label>
+
+          <label>Automobile Preference</label>
+          <label><input type="checkbox" name="automobile" value="maserati" />Maserati</label>
+          <label><input type="checkbox" name="automobile" value="koenigsegg" />Koenigsegg</label>
+          <label><input type="checkbox" name="automobile" value="mclaren" />McLaren</label>
+          <label><input type="checkbox" name="automobile" value="mitsubishi" />Mitsubishi</label>
+
+          <button type="submit">Register</button>
+          <button type="reset">Reset</button>
+          <button disabled>No clicky</button>
         </fieldset>
       </form>
-      <p>This is a one-line form without <code>&lt;fieldset&gt;</code>:</p>
-      <form>
-        <label>Add funds:</label><input type="text" size="10" placeholder="e.g. $10" /><button type="submit">Pay</button>
-      </form>
+
       <h2>Tables</h2>
       <p>
-        A simple table would look like this:
+        Here's a table of games!
       </p>
       <table>
         <thead>
           <tr>
-            <th>Make</th>
-            <th>Price</th>
-            <th>Year</th>
+            <th>Game</th>
+            <th>Year Developed</th>
+            <th>Awesomeness</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>BMW X6</td>
-            <td>$75,000</td>
-            <td>2013</td>
+            <td>Insurgency</td>
+            <td>2014</td>
+            <td>87/100</td>
           </tr>
           <tr>
-            <td>Mercedes-Benz E350</td>
-            <td>$52,700</td>
-            <td>2014</td>
+            <td>Absolute Drift</td>
+            <td>2015</td>
+            <td>91/100</td>
+          </tr>
+          <tr>
+            <td>Street Fighter III</td>
+            <td>1997</td>
+            <td>89/100</td>
           </tr>
         </tbody>
       </table>
-      <h2>Headings</h2>
-      <p>Just use standard <code>&lt;h1&gt;</code>...<code>&lt;h6&gt;</code> tags:
-        <h1>This is &lt;h1&gt;</h1>
-        <p>Use a heading of the highest level once per page.</p>
-        <h2>This is &lt;h2&gt;</h2>
-        <p>Use <code>&lt;h2&gt;</code> for sections of the page.</p>
-        <h3>This is &lt;h3&gt;</h3>
-        <p>Use <code>&lt;h3&gt;</code> for sub-sections.</p>
-        <h4>This is &lt;h4&gt;</h4>
-        <p>I would recommend to avoid this type of heading at all.</p>
-        <h5>This is &lt;h5&gt;</h5>
-        <p>I would recommend to avoid this type of heading at all.</p>
-        <h6>This is &lt;h6&gt;</h6>
-        <p>I would recommend to avoid this type of heading at all.</p>
-        <p>Sup<sup>&reg;</sup> and Sub<sub>&reg;</sub> Elements</p>
-        <h2>Lists</h2>
-        <p>Just use standard <code>&lt;ul&gt;</code>, <code>&lt;ol&gt;</code> and <code>&lt;dl&gt;</code> tags:
-          <ul>
-            <li>Orange</li>
+
+      <h2>Lists</h2>
+      <p>You can nest <code>&lt;ul&gt;</code> and <code>&lt;ol&gt;</code> tags as usual.</p>
+      <ul>
+        <li>Friday</li>
+        <li>
+          Saturday
+          <ol>
+            <li>One</li>
             <li>
-              Apple
-              <ol>
-                <li>First</li>
-                <li>
-                  Second
-                  <ul>
-                    <li>Blue</li>
-                    <li>Yellow</li>
-                    <li>Green</li>
-                    <li>Red</li>
-                  </ul>
-                </li>
-                <li>Third</li>
-              </ol>
+              Two
+              <ul>
+                <li>Me</li>
+                <li>You</li>
+                <li>She</li>
+                <li>They</li>
+              </ul>
             </li>
-            <li>Apricot</li>
-          </ul>
-          <dl>
-            <dt>Banana</dt>
-            <dd>A yellow fruit that is easy to peel.</dd>
-            <dt>Cashew</dt>
-            <dd>A tan nut without a peel.</dd>
-            <dt>Cherry</dt>
-            <dd>A red fruit that is hard to peel.</dd>
-          </dl>
-          <h2>Blockquote</h2>
-          <blockquote>
-            Use this to emphasize a quote
-            <footer>&mdash; Author Name, Publication</footer>
-          </blockquote>
-          <h2>Keyboard</h2>
-          <p>Sometimes you want to let people know they should press a keyboard command like <kbd>ctrl + l</kbd>.</p>
-          <h2>Images</h2>
-          <figure>
-            <img src="https://placeimg.com/1000/500/people?t=1536453942158" alt="1000px x 500px placeholder image" />
-            <figcaption>A random 1000px x 500px image of a person</figcaption>
-          </figure>
-          <h2>Work in progress</h2>
-          <p>
-            The framework is still in development. If you want to contribute, fork it and submit a <a href="https://github.com/yegor256/tacit">pull
-              request
-            </a>. Your help is always appreciated.
-          </p>
+            <li>Three</li>
+          </ol>
+        </li>
+        <li>Sunday</li>
+      </ul>
+      <p>You can also write definition lists! (<code>&lt;dl&gt;</code>)</p>
+      <dl>
+        <dt>Hakan</dt>
+        <dd>The man who's writing this</dd>
+        <dt>Stanboi</dt>
+        <dd>Hakan's childhood friend</dd>
+        <dt>Prez</dt>
+        <dd>Hakan's other childhood friend</dd>
+      </dl>
+      
+      
+      <h2>Help?</h2>
+      <p>
+        I made this framework because I was impressed by Tacit, but wanted to include much more. So I forked it and added lots of functionality while changing lots of things as well. This project has since evolved to become its own framework, and while I'm still working on it, I'm also busy with university! If you'd like to help out, fork this repo on Github and submit a <a href="https://github.com/kimeiga/bahunya/pulls">pull request</a>. Cheers!
+      </p>
     </article>
   </main>
   <footer>
     <p>
-      Made by <a href="http://www.yegor256.com">Yegor Bugayenko</a>, 2015-2018
+      Created by <a href="http://www.kimei.ga">Hakan Alpay</a>, 2018
     </p>
+    <p>Inspired by <a href="https://yegor256.github.io/tacit/">Tacit</a>, a classless CSS framework</p>
     <nav>
-
-      <a href="https://github.com/yegor256/tacit">GitHub</a>
-      <a href="https://yegor256.github.io/tacit/tacit-VERSION.min.css">Download</a>
+      <a href="https://github.com/kimeiga/bahunya">GitHub Repo</a>
       <a href="https://opensource.org/licenses/MIT">MIT license</a>
-
-    </nav>
-    <nav>
-
-      <a href="https://github.com/yegor256/tacit/stargazers">
-        <img src="https://img.shields.io/github/stars/yegor256/tacit.svg?style=flat-square" alt="github stars" />
-      </a>
-
-      <a href="http://jigsaw.w3.org/css-validator/check/referer">
-        <img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" />
-      </a>
-
+      <a href="https://github.com/Kimeiga/bahunya/blob/css/bahunya-0.1.1.css">Download CSS</a>
     </nav>
   </footer>
 
   <script src="prism.js"></script>
-  <!-- <script src="https://cdn.rawgit.com/Kimeiga/bahunya/26313661/prism.js"></script> -->
 
 </body>
 
