@@ -11,7 +11,7 @@
 Just include the following in your `head`
 
 ```html
-<link rel="stylesheet" href="https://cdn.rawgit.com/kimeiga/bahunya/css/bahunya-0.1.1.css" />
+<link rel="stylesheet" href="https://cdn.rawgit.com/kimeiga/bahunya/css/bahunya-0.1.2.css" />
 ```
 
 Visit the [website](https://kimeiga.github.io/bahunya/) for instructions on activating the navbar and syntax highlighting.
@@ -31,6 +31,11 @@ It will be available at `localhost:1234`
 `npm run build`
 
 (which runs `parcel build index.html --out-dir docs --public-url ./`)
+
+## Branches
+
+Development is taking place on the master branch. Github Pages website is being served from the `docs` folder on the master branch for convenience.
+Minified CSS files for importing are hosted on the `css` branch and served with RawGit.
 
 ### Thanks
 
