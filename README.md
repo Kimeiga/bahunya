@@ -37,6 +37,16 @@ It will be available at `localhost:1234`
 Development is taking place on the master branch. Github Pages website is being served from the `docs` folder on the master branch for convenience.
 Minified CSS files for importing are hosted on the `css` branch and served with RawGit.
 
+### Mini Post-mortem
+
+I wrote about this framework in the DevX publication on Medium!
+
+https://medium.com/ucladevx/i-created-a-10kb-classless-css-framework-5d5eff56837d
+
+If you are a computer science student at UCLA looking for a collection software team to hone your skills on a real-world project, feel free to apply!
+
+http://ucladevx.com/
+
 ### Thanks
 
 Huge thanks to [Yegor Bugayenko](https://www.yegor256.com/) and [Filipe Freire](https://filfreire.com/) for creating [Tacit](https://yegor256.github.io/tacit/), a fantastic classless CSS framework that inspired this project. I felt that Tacit was good, but I wanted responsive typography, vertical rhythm, a navbar, better web safe fonts, dark color theme, code syntax highlighting, and more. So I made Bahunya!
