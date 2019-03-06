@@ -5,7 +5,7 @@
   "license": "MIT",
   "devDependencies": {
     "cssnano": "^4.1.0",
-    "node-sass": "^4.9.3"
+    "node-sass": "^4.11.0"
   },
   "dependencies": {
     "normalize.css": "^8.0.0",
