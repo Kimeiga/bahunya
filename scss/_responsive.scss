@@ -21,25 +21,7 @@
 // SOFTWARE.
 
 @media (max-width: $mobile-width) {
-  // body {
-  //   padding: $em 0;
-  // }
 
-  // article {
-  //   border: 0;
-  //   padding: $em;
-  // }
-
-  // header,
-  // footer {
-  //   padding: $em;
-  // }
-
-  // textarea,
-  // input,
-  // select {
-  //   min-width: 0;
-  // }
 
   fieldset {
     // The following line fixes fieldset overflow in webkit browsers.
@@ -52,10 +34,6 @@
       page-break-before: auto;
     }
   }
-
-  // section {
-  //   width: auto;
-  // }
 
   x:-moz-any-link {
     // The following lines fixes fieldset overflow bug in Firefox browser.

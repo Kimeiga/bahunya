@@ -22,52 +22,7 @@
 
 @import 'defs';
 
-// pre,
-// code,
-// kbd,
-// samp,
-// var,
-// output {
-//   font-family: $monospace;
-//   font-size: .8 * $em;
-// }
 
-/*
-pre {
-  border-left: 1px solid lighten($green, 25);
-  // line-height: 1.4 * $em;
-  overflow: auto;
-  padding-left: bs(0.5);
-
-  code {
-    background: none;
-    border: 0;
-    line-height: 1.65 * $em;
-    padding: 0;
-  }
-}
-
-code,
-kbd {
-  background: lighten($green, 60);
-  border-radius: .2 * $em;
-  color: $green;
-  display: inline-block;
-  line-height: $em;
-  padding: (.2 * $em) (.35 * $em) (.15 * $em);
-}
-
-kbd {
-  background: $green;
-  color: $white;
-}
-
-mark {
-  background: $yellow;
-  padding: 0 (.2 * $em);
-}
-
-*/
 
 pre {
   font-family: $monospace;
@@ -97,20 +52,3 @@ mark {
   background: $primary;
   padding: 0 bs(0.2);
 }
-
-// pre {
-// 	width: 100%;
-// 	padding: 0;
-// 	margin: 0;
-// 	overflow: auto;
-// 	overflow-y: hidden;
-// 	font-size: 12px;
-// 	line-height: 20px;
-// 	background: #efefef;
-// 	border: 1px solid #777;
-// 	background: url(lines.png) repeat 0 0;
-// }
-// pre code {
-// 	padding: 10px;
-// 	color: #333;
-// }
