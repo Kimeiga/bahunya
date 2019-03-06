@@ -24,6 +24,10 @@
 
 
 
+pre, code{
+  overflow-x: auto;
+}
+
 pre {
   font-family: $monospace;
   code:not([class]) {
@@ -37,7 +41,7 @@ code, kbd {
   background: $code-bg;
   border-radius: .2 * bs(1);
   color: $code-color;
-  display: inline-block;
+  // display: inline-block;
   padding: 0 bs(0.2); 
   font-family: $monospace;
   font-size: 90%;

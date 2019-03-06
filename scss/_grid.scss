@@ -25,12 +25,6 @@
   box-sizing: border-box;
 }
 
-.container {
-  width: bs(32);
-  margin: 0 auto;
-  max-width: 100%;
-
-}
 
 img {
   max-width: 100%;
@@ -86,17 +80,17 @@ header label {
 
 header {
 
-  padding: bs(3) bs(1);
-  // padding: bs(3) bs(1) bs(2);
-  // width: bs(25);
-  // margin: 0 auto;
-  // text-align: center;
+  // padding: bs(3) bs(1);
+  padding: bs(3) bs(1) bs(2);
+  width: bs(25);
+  margin: 0 auto;
+  text-align: center;
   
-  // max-width: 100%;
+  max-width: 100%;
 
-  // display: flex;
-  // align-items: center;
-  // flex-direction: column;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   // justify-content: center;
 
   // font-weight: 300;
