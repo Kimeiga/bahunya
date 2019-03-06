@@ -11,7 +11,7 @@
 Just include the following in your `head`
 
 ```html
-<link rel="stylesheet" href="https://cdn.rawgit.com/kimeiga/bahunya/css/bahunya-0.1.2.css" />
+<link rel="stylesheet" href="https://cdn.rawgit.com/kimeiga/bahunya/css/bahunya-0.1.3.css" />
 ```
 
 Visit the [website](https://kimeiga.github.io/bahunya/) for instructions on activating the navbar and syntax highlighting.
