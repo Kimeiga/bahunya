@@ -54,6 +54,3 @@ Thumbs.db
 !.gitignore
 !.editorconfig
 !.phpcs.xml.dist
-
-# ignore dist folder produced by parcel
-dist/
