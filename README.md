@@ -8,7 +8,7 @@ A *classless* CSS framework with a *navbar* and *dark styling* for around 10.46 
 
 Use it by pasting the following into your `<head>`
 
-```
+```html
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kimeiga/bahunya/dist/bahunya.min.css">
 ```
 
@@ -29,7 +29,7 @@ How to make the navbar
 
 Example:
 
-```
+```html
 <nav>
   <a href="/">Bahunya</a>
   <a href="/test.html">test</a>
@@ -39,7 +39,7 @@ Example:
 
 What about a navbar with nested lists?
 
-```
+```html
 <nav>
   <ul>
     <li>
