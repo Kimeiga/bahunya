@@ -458,7 +458,12 @@ tt {
   background: rgba(240, 246, 252, 0.15);
   background: var(--background-bright);
 }
-pre > code {
+pre {
+  padding: 1em;
+  display: block;
+  overflow-x: auto;
+}
+pre>code {
   background: rgb(22, 27, 34);
   background: var(--background);
   padding: 1em;
@@ -492,6 +497,8 @@ table {
   margin-bottom: 10px;
   width: 100%;
   table-layout: fixed;
+  overflow-x: auto;
+  display: block;
 }
 table caption {
   text-align: left;
@@ -565,7 +572,7 @@ summary:hover,
 summary:focus {
   text-decoration: underline;
 }
-details > :not(summary) {
+details> :not(summary) {
   /* margin-top: 0; */
 }
 summary::-webkit-details-marker {
@@ -582,7 +589,7 @@ dialog {
   border: 1px solid var(--border);
   padding: 10px 30px;
 }
-dialog > header:first-child {
+dialog>header:first-child {
   border-radius: 6px 6px 0 0;
   margin: -10px -30px 10px;
   padding: 10px;
@@ -607,7 +614,7 @@ footer {
   color: rgb(139, 148, 158);
   color: var(--text-muted);
 }
-body > footer {
+body>footer {
   margin-top: 40px;
 }
 @media print {

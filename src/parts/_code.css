@@ -21,7 +21,13 @@ tt {
   background: var(--background-bright);
 }
 
-pre > code {
+pre {
+  padding: 1em;
+  display: block;
+  overflow-x: auto;
+}
+
+pre>code {
   background: var(--background);
   padding: 1em;
   display: block;
