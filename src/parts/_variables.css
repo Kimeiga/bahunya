@@ -1,0 +1,35 @@
+:root {
+  --background-body: #0d1117;
+
+  --background: rgb(22, 27, 34);
+  --background-bright: rgba(240, 246, 252, 0.15);
+
+  --background-alt: #1a242f;
+  --selection: #1c76c5;
+  --text-main: rgb(201, 209, 217);
+  --text-bright: rgb(227, 233, 240);
+  --text-muted: rgb(139, 148, 158);
+
+  --links: #e3bc5e;
+  --focus: rgb(56, 139, 253);
+
+  --focus-background: rgb(12, 45, 107);
+
+  --border: rgb(33, 37, 44);
+  --border-muted: rgb(33, 38, 45);
+
+  --border-bright: rgb(139, 148, 158);
+
+  --button-hover: #324759;
+
+  --form-placeholder: #a9a9a9;
+
+  --select-arrow: svg-load("./assets/select-arrow.svg", fill: #efefef);
+
+  /* Fonts */
+  --monospace: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
+  --sans-serif: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji",
+    sans-serif;
+}

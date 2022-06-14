@@ -1,0 +1,63 @@
+body nav:first-of-type {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+
+  padding: 0 calc((100vw - 50rem) / 2);
+
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  z-index: 999;
+}
+
+body nav:first-of-type:before {
+  /* https://stackoverflow.com/questions/63907743/parent-element-backdrop-filter-does-not-apply-for-its-child */
+  backdrop-filter: saturate(180%) blur(5px);
+  -webkit-backdrop-filter: saturate(180%) blur(5px);
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+body nav:first-of-type #brand {
+  margin-right: auto;
+  font-size: 1.1rem;
+}
+
+body nav:first-of-type a {
+  margin: 10px;
+  display: inline-block;
+}
+
+body nav:first-of-type ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: inline;
+}
+
+body nav:first-of-type > ul > li {
+  float: left;
+}
+
+body nav:first-of-type ul li ul {
+  display: none;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+  /* z-index: 1; */
+  backdrop-filter: saturate(180%) blur(5px);
+}
+
+body nav:first-of-type ul li:hover ul {
+  display: block;
+}

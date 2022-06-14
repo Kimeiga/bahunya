@@ -1,0 +1,39 @@
+code,
+samp,
+tt,
+var,
+kbd {
+  font-size: 85%;
+  font-family: var(--monospace);
+}
+
+code,
+samp,
+tt,
+kbd {
+  padding: 0.2em 0.4em;
+  border-radius: 0.4em;
+}
+
+code,
+samp,
+tt {
+  background: var(--background-bright);
+}
+
+pre > code {
+  background: var(--background);
+  padding: 1em;
+  display: block;
+  overflow-x: auto;
+}
+
+var {
+  color: var(--focus);
+  font-style: normal;
+}
+
+kbd {
+  border: 1px solid var(--border-bright);
+  font-family: var(--monospace);
+}

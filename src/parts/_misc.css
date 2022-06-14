@@ -1,0 +1,127 @@
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--border-bright);
+  margin: 1em 0;
+}
+
+table {
+  border-collapse: collapse;
+  margin-bottom: 10px;
+  width: 100%;
+  table-layout: fixed;
+}
+
+table caption {
+  text-align: left;
+}
+
+td,
+th {
+  padding: 6px;
+  text-align: left;
+  vertical-align: top;
+  word-wrap: break-word;
+}
+
+thead {
+  border-bottom: 1px solid var(--border-bright);
+}
+
+tfoot {
+  border-top: 1px solid var(--border-bright);
+}
+
+tbody tr:nth-child(even) {
+  background-color: var(--background);
+}
+
+tbody tr:nth-child(even) button {
+  background-color: var(--background-alt);
+}
+
+tbody tr:nth-child(even) button:hover {
+  background-color: var(--background-body);
+}
+
+::selection {
+  background-color: var(--selection);
+  color: var(--text-bright);
+}
+
+details summary {
+  padding: 0.5rem 0;
+  border-top: 1px solid var(--border);
+  cursor: pointer;
+  font-size: 1.2rem;
+  outline: none;
+  /* font-weight: 300; */
+  /* list-style: none; */
+}
+
+/* details summary:after {
+  content: "+";
+  color: white;
+  position: absolute;
+  font-size: 1.75rem;
+  line-height: 0;
+  margin-top: 0.75rem;
+  right: 0;
+  font-weight: 200;
+  transform-origin: center;
+  transition: 200ms linear;
+}
+details[open] summary:after {
+  transform: rotate(45deg);
+  font-size: 2rem;
+} */
+
+summary:hover,
+summary:focus {
+  text-decoration: underline;
+}
+
+details > :not(summary) {
+  /* margin-top: 0; */
+}
+
+summary::-webkit-details-marker {
+  /* color: var(--text-main); */
+}
+
+dialog {
+  background-color: var(--background-body);
+  color: var(--text-main);
+  border: none;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  padding: 10px 30px;
+}
+
+dialog > header:first-child {
+  border-radius: 6px 6px 0 0;
+  margin: -10px -30px 10px;
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+
+dialog::backdrop {
+  background: #0000009c;
+  backdrop-filter: blur(4px);
+}
+
+footer {
+  border-top: 1px solid var(--border);
+  padding-top: 10px;
+  color: var(--text-muted);
+}
+
+body > footer {
+  margin-top: 40px;
+}

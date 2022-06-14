@@ -1,0 +1,48 @@
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button {
+  background: var(--background-bright);
+  /* border: 1px solid rgb(48, 54, 61); */
+  border: 1px solid rgb(48, 54, 61);
+  color: var(--text-bright);
+  font-family: inherit;
+  font-size: inherit;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding: 5px 16px;
+  border-radius: 6px;
+  outline: none;
+  font-size: 87.5%;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover,
+button:hover {
+  /* background-color: rgb(48, 54, 61); */
+  border-color: rgb(139, 148, 158);
+  filter: brightness(115%);
+}
+
+input[type="submit"]:focus,
+input[type="reset"]:focus,
+input[type="button"]:focus,
+button:focus {
+  border: 1px solid rgb(139, 148, 158);
+  box-shadow: none;
+}
+
+input[type="submit"]:active,
+input[type="reset"]:active,
+input[type="button"]:active,
+button:active {
+  background: none;
+}
+
+input[type="submit"]:disabled,
+input[type="reset"]:disabled,
+input[type="button"]:disabled,
+button:disabled {
+  border-color: rgb(48, 54, 61);
+}

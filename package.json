@@ -1,18 +1,76 @@
 {
-  "name": "bahunya-parcel",
-  "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT",
-  "devDependencies": {
-    "cssnano": "^4.1.0",
-    "node-sass": "^4.11.0"
-  },
-  "dependencies": {
-    "normalize.css": "^8.0.0",
-    "shevy": "^2.1.0"
-  },
-  "scripts": {
-    "start": "parcel index.html",
-    "build": "parcel build index.html --out-dir docs --public-url ./"
-  }
+	"name": "bahunya",
+	"version": "2.0.0",
+	"description": "A classless CSS framework with a navbar and dark styling.",
+	"main": "bahunya.css",
+	"scripts": {
+		"build": "gulp build",
+		"dev": "gulp watch",
+		"lint:js": "eslint bookmarklet/original.js docs/script.js docs/index.html gulpfile.js",
+		"lint:css": "stylelint sass/**/*.css src/style.css",
+		"lint": "yarn lint:js --fix && yarn lint:css --fix"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/kimeiga/bahunya.git"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"keywords": [
+		"css",
+		"css-framework",
+		"simple",
+		"minimal"
+	],
+	"author": "Kimeiga",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/kimeiga/bahunya/issues"
+	},
+	"homepage": "https://github.com/kimeiga/bahunya",
+	"devDependencies": {
+		"@changesets/cli": "^2.7.2",
+		"autoprefixer": "^9.5.1",
+		"browser-sync": "^2.26.3",
+		"chalk": "^2.4.2",
+		"cssnano": "^4.1.10",
+		"eslint": "^7.1.0",
+		"eslint-config-standard": "^14.1.1",
+		"eslint-plugin-html": "^6.0.2",
+		"eslint-plugin-import": "^2.20.2",
+		"eslint-plugin-markdown": "^2.0.0-alpha.0",
+		"eslint-plugin-node": "^11.1.0",
+		"eslint-plugin-prefer-arrow": "^1.2.1",
+		"eslint-plugin-promise": "^4.2.1",
+		"eslint-plugin-standard": "^4.0.1",
+		"gulp": "^4.0.0",
+		"gulp-babel": "^8.0.0",
+		"gulp-bytediff": "^1.0.0",
+		"gulp-filter": "^5.1.0",
+		"gulp-flatten": "^0.4.0",
+		"gulp-postcss": "^8.0.0",
+		"gulp-rename": "^1.4.0",
+		"gulp-sass": "^4.1.0",
+		"gulp-sizereport": "^1.2.1",
+		"gulp-sourcemaps": "^2.6.5",
+		"husky": "^4.2.5",
+		"node-sass": "^5.0.0",
+		"pa11y": "^5.3.0",
+		"postcss-color-mod-function": "^3.0.3",
+		"postcss-css-variables": "^0.12.0",
+		"postcss-import": "^12.0.1",
+		"postcss-inline-svg": "^4.1.0",
+		"puppeteer": "^3.2.0",
+		"stylelint": "^13.5.0",
+		"stylelint-config-standard": "^20.0.0"
+	},
+	"browserslist": [
+		"defaults"
+	],
+	"files": [
+		"out/*.css",
+		"LICENSE.md"
+	],
+	"dependencies": {}
 }

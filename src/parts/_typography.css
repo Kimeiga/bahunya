@@ -1,0 +1,88 @@
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 3rem 0 1.38rem;
+  line-height: 1.3;
+}
+
+h1 {
+  font-size: 2.488rem;
+}
+
+h2 {
+  font-size: 2.074rem;
+}
+
+h3 {
+  font-size: 1.728rem;
+}
+
+h4 {
+  font-size: 1.44rem;
+}
+
+h5 {
+  font-size: 1.2rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+small {
+  font-size: 0.833rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong {
+  color: var(--text-bright);
+}
+
+blockquote {
+  border-left: 4px solid var(--focus);
+  margin: 1.5em 0;
+  padding: 0em 1em;
+}
+blockquote > :first-child {
+  margin-top: 0;
+}
+blockquote > :last-child {
+  margin-bottom: 0;
+}
+
+blockquote > footer {
+  border: 0;
+}
+
+address {
+  font-style: normal;
+}
+
+a[href^="mailto\:"]::before {
+  content: "📧 ";
+}
+
+a[href^="tel\:"]::before {
+  content: "📞 ";
+}
+
+a[href^="sms\:"]::before {
+  content: "💬 ";
+}
+
+mark {
+  background-color: var(--links);
+  border-radius: 2px;
+  padding: 0 2px 0 2px;
+}
+
+ul,
+ol {
+  padding-left: 2em;
+}

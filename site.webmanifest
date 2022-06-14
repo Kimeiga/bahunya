@@ -1,0 +1,8 @@
+{
+  "name": "Bahunya",
+  "short_name": "Bahunya",
+  "start_url": "./",
+  "theme_color": "#e3bc5e",
+  "background_color": "#0d1117",
+  "display": "standalone"
+}
