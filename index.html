@@ -35,6 +35,8 @@
   </script>
 
   <link rel="shortcut icon" href="src/bahunya-logo.png" type="image/x-icon">
+
+
 </head>
 
 <body>
@@ -50,9 +52,13 @@
   <p>Use it by pasting the following into your <code>&lt;head&gt;</code></p>
 
   <!-- TODO: change -->
-  <pre><code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kimeiga/bahunya/dist/bahunya.min.css"></code></pre>
+  <pre
+    id="link-snippet"><code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kimeiga/bahunya/dist/bahunya.min.css"></code></pre>
 
-  <button>Copy to Clipboard</button>
+  <button type="button" id="copy-button">
+    Copy to clipboard
+    <span id="copy-button-feedback"></span>
+  </button>
 
   <p>Now write your web app with semantic html elements and watch it look pretty right out of the box, no css classes
     needed!</p>
@@ -131,6 +137,20 @@
         the ground without worrying too much styling.</small></p>
 
   </footer>
+  <script defer>
+    const copyButton = document.getElementById('copy-button')
+    const copyButtonFeedback = document.getElementById('copy-button-feedback')
+
+    copyButton.addEventListener('click', () => {
+      const clipboard = navigator.clipboard || window.clipboard
+      const snippetText = document.querySelector(`#link-snippet code`).textContent
+
+      clipboard.writeText(snippetText)
+        .then(() => { copyButtonFeedback.textContent = '✔' })
+        .catch(() => { copyButtonFeedback.textContent = '❌' })
+        .then(() => setTimeout(() => { copyButtonFeedback.textContent = '' }, 1000))
+    })
+  </script>
 </body>
 
 </html>
