@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="bahunya-logo.png" alt="bahunya logo">
+  <img src="src/bahunya-logo.png" alt="bahunya logo">
 </p>
 
 TODO
