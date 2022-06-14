@@ -8,7 +8,9 @@ A *classless* CSS framework with a *navbar* and *dark styling* for around 10.46 
 
 Use it by pasting the following into your `<head>`
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kimeiga/bahunya/dist/bahunya.min.css">
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kimeiga/bahunya/dist/bahunya.min.css">
+```
 
 Now write your web app with semantic html elements and watch it look pretty right out of the box, no css classes needed!
 
@@ -27,45 +29,49 @@ How to make the navbar
 
 Example:
 
-    <nav>
-      <a href="/">Bahunya</a>
-      <a href="/test.html">test</a>
-      <a href="/markdown.html">markdown</a>
-    </nav>
+```html
+<nav>
+  <a href="/">Bahunya</a>
+  <a href="/test.html">test</a>
+  <a href="/markdown.html">markdown</a>
+</nav>
+```
 
 What about a navbar with nested lists?
 
-    <nav>
+```html
+<nav>
+  <ul>
+    <li>
+      <a href="#text">Text</a>
       <ul>
-        <li>
-          <a href="#text">Text</a>
-          <ul>
-              <li><a href="#text__headings">Headings</a></li>
-              <li><a href="#text__paragraphs">Paragraphs</a></li>
-              <li><a href="#text__blockquotes">Blockquotes</a></li>
-              ...
-          </ul>
-        </li>
-        <li>
-          <a href="#embedded">Embedded content</a>
-          <ul>
-              <li><a href="#embedded__images">Images</a></li>
-              <li><a href="#embedded__audio">Audio</a></li>
-              <li><a href="#embedded__video">Video</a></li>
-              ...
-          </ul>
-        </li>
-        <li>
-          <a href="#forms">Form elements</a>
-          <ul>
-              <li><a href="#forms__input">Input fields</a></li>
-              <li><a href="#forms__select">Select menus</a></li>
-              <li><a href="#forms__checkbox">Checkboxes</a></li>
-              ...
-          </ul>
-        </li>
+          <li><a href="#text__headings">Headings</a></li>
+          <li><a href="#text__paragraphs">Paragraphs</a></li>
+          <li><a href="#text__blockquotes">Blockquotes</a></li>
+          ...
       </ul>
-    </nav>
+    </li>
+    <li>
+      <a href="#embedded">Embedded content</a>
+      <ul>
+          <li><a href="#embedded__images">Images</a></li>
+          <li><a href="#embedded__audio">Audio</a></li>
+          <li><a href="#embedded__video">Video</a></li>
+          ...
+      </ul>
+    </li>
+    <li>
+      <a href="#forms">Form elements</a>
+      <ul>
+          <li><a href="#forms__input">Input fields</a></li>
+          <li><a href="#forms__select">Select menus</a></li>
+          <li><a href="#forms__checkbox">Checkboxes</a></li>
+          ...
+      </ul>
+    </li>
+  </ul>
+</nav>
+```
 
 As you can see, the navbar works whether you use a unordered list with sub-unordered-lists (`<ul>`'s with `<li>`'s) or if you just put the `<a>`'s right under the main `<nav>`. Both work, although I think the latter option might be better for screen readers.
 
@@ -75,6 +81,7 @@ As you can see, the navbar works whether you use a unordered list with sub-unord
 ## To develop locally:
 
 `yarn`
+
 `yarn dev`
 
 ## To build:
