@@ -13,7 +13,8 @@ TODO
 Just include the following in your `head`
 
 ```html
-<link rel="stylesheet" href="https://cdn.rawgit.com/kimeiga/bahunya/css/bahunya-0.1.3.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kimeiga/bahunya/dist/bahunya.min.css" />
+
 ```
 
 Visit the [website](https://kimeiga.github.io/bahunya/) for instructions on activating the navbar and syntax highlighting.
