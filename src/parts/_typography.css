@@ -30,6 +30,7 @@ h5 {
 h6 {
   font-size: 1rem;
 }
+
 small {
   font-size: 0.833rem;
 }
@@ -49,14 +50,16 @@ blockquote {
   margin: 1.5em 0;
   padding: 0em 1em;
 }
-blockquote > :first-child {
+
+blockquote> :first-child {
   margin-top: 0;
 }
-blockquote > :last-child {
+
+blockquote> :last-child {
   margin-bottom: 0;
 }
 
-blockquote > footer {
+blockquote>footer {
   border: 0;
 }
 
@@ -85,4 +88,17 @@ mark {
 ul,
 ol {
   padding-left: 2em;
+}
+
+aside {
+  width: 40%;
+  padding-left: .5rem;
+  margin-left: .5rem;
+  float: right;
+  border-left: 2px solid var(--focus);
+  font-style: italic;
+}
+
+aside>p {
+  margin: .5rem;
 }
