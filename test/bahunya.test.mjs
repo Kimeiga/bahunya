@@ -3,7 +3,7 @@ import { readFile } from "node:fs/promises";
 import { join, resolve } from "node:path";
 import test from "node:test";
 import { fileURLToPath } from "node:url";
-import { bundleCss } from "../scripts/build.mjs";
+import { bundleCss, minifyCss } from "../scripts/build.mjs";
 
 const root = resolve(fileURLToPath(new URL("..", import.meta.url)));
 
@@ -71,11 +71,31 @@ test("visual system stays responsive, touch-friendly, and classless", async () =
   assert.match(css, /--control-height: 2\.75rem/);
   assert.match(css, /--radius-lg: 1\.25rem/);
   assert.match(css, /font-size: clamp\(2rem,/);
-  assert.match(css, /position: sticky/);
+  assert.match(css, /position: fixed/);
   assert.match(css, /min-height: var\(--control-height\)/);
   assert.match(css, /prefers-reduced-motion: reduce/);
   assert.match(index, /width="192" height="192"/);
   assert.doesNotMatch(demo, /\sclass="/);
+});
+
+test("minifier preserves nested at-rule closing braces", () => {
+  const source = "@media (x){a{color:red;}}b{color:blue;}";
+  const minified = minifyCss(source);
+
+  assert.equal(minified, "@media (x){a{color:red}}b{color:blue}");
+});
+
+test("navbar keeps the fixed edge-to-edge blurred header contract", async () => {
+  const css = await bundleCss();
+
+  assert.match(css, /position: fixed/);
+  assert.match(css, /top: 0/);
+  assert.match(css, /left: 0/);
+  assert.match(css, /right: 0/);
+  assert.match(css, /background: var\(--nav-background\)/);
+  assert.match(css, /backdrop-filter: saturate\(180%\) blur\(20px\)/);
+  assert.match(css, /border-radius: 0/);
+  assert.match(css, /body:has\(> nav:first-of-type\)/);
 });
 
 test("package build is dependency-free", async () => {
