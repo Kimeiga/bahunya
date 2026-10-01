@@ -7,6 +7,7 @@
   --background-alt: #1a242f;
 
   --selection: #1c76c5;
+  --mark-text: #0d1117;
   --text-main: #c9d1d9;
   --text-bright: #e3e9f0;
   --text-muted: #8b949e;
@@ -41,6 +42,7 @@
   --background-alt: #f0f3f6;
 
   --selection: #b6d7ff;
+  --mark-text: #ffffff;
   --text-main: #1f2328;
   --text-bright: #0d1117;
   --text-muted: #59636e;
