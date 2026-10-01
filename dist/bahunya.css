@@ -212,11 +212,16 @@ main > header:first-child > img:first-child {
 
 blockquote {
   margin: var(--space-6) 0;
-  padding: var(--space-4) var(--space-6);
+  padding: 0 0 0 var(--space-6);
   color: var(--text-main);
-  background: var(--surface-raised);
-  border-left: 3px solid var(--focus);
-  border-radius: 0 var(--radius) var(--radius) 0;
+  background: transparent;
+  border-left: 4px solid var(--border-bright);
+  border-radius: 0;
+}
+
+blockquote blockquote {
+  margin: var(--space-4) 0;
+  padding-left: var(--space-4);
 }
 
 blockquote > :first-child {
@@ -256,8 +261,18 @@ mark {
 
 ul,
 ol {
-  margin: 0 0 var(--space-4);
-  padding-left: 1.5em;
+  margin: 0 0 var(--space-6);
+  padding-left: 1.6em;
+}
+
+li + li {
+  margin-top: var(--space-2);
+}
+
+li > ul,
+li > ol {
+  margin-top: var(--space-2);
+  margin-bottom: 0;
 }
 
 aside {
@@ -588,17 +603,17 @@ hr {
 table {
   display: block;
   width: 100%;
-  margin: 0 0 var(--space-6);
+  margin: var(--space-6) 0;
   overflow-x: auto;
-  background: var(--surface-raised);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
+  background: transparent;
+  border: 0;
+  border-radius: 0;
   border-collapse: collapse;
   table-layout: auto;
 }
 
 table caption {
-  padding: var(--space-3) var(--space-4);
+  padding: 0 0 var(--space-3);
   color: var(--text-muted);
   text-align: left;
 }
@@ -617,24 +632,23 @@ th {
   font-weight: 650;
 }
 
-thead {
-  border-bottom: 1px solid var(--border);
+thead th {
+  border-bottom: 1px solid var(--border-bright);
 }
 
-tfoot {
+tbody tr + tr td {
   border-top: 1px solid var(--border);
 }
 
-tbody tr:nth-child(even) {
-  background-color: var(--background);
+tfoot th,
+tfoot td {
+  border-top: 1px solid var(--border-bright);
 }
 
-tbody tr:nth-child(even) button {
-  background-color: var(--background-alt);
-}
-
+tbody tr:nth-child(even),
+tbody tr:nth-child(even) button,
 tbody tr:nth-child(even) button:hover {
-  background-color: var(--surface-hover);
+  background: transparent;
 }
 
 ::selection {
@@ -883,15 +897,20 @@ body > header:first-child > nav > ul > li:last-child > ul {
 }
 
 section {
-  margin: var(--space-10) 0;
+  margin: var(--space-12) 0;
 }
 
 article {
-  padding: clamp(var(--space-4), 3vw, var(--space-6));
-  margin: var(--space-4) 0;
-  background: var(--surface-raised);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
+  padding: 0;
+  margin: var(--space-8) 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+}
+
+article + article {
+  padding-top: var(--space-8);
+  border-top: 1px solid var(--border);
 }
 
 article > header {
