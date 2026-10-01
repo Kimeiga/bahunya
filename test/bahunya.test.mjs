@@ -14,6 +14,20 @@ test("navbar styles only target primary body/header navigation", async () => {
   assert.doesNotMatch(css, /body nav:first-of-type/);
 });
 
+test("navbar needs no Bahunya-specific class or ID hooks", async () => {
+  const [css, index, readme] = await Promise.all([
+    bundleCss(),
+    readFile(join(root, "index.html"), "utf8"),
+    readFile(join(root, "README.md"), "utf8"),
+  ]);
+
+  assert.doesNotMatch(css, /#brand/);
+  assert.doesNotMatch(index, /id="brand"/);
+  assert.match(css, /> a:first-of-type/);
+  assert.match(css, /> ul > li:first-child/);
+  assert.match(readme, /no Bahunya-specific class or ID is required/);
+});
+
 test("nested navigation is keyboard accessible", async () => {
   const css = await bundleCss();
   assert.match(css, /:focus-within > ul/);

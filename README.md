@@ -55,7 +55,7 @@ or a navigation element inside the first top-level header:
 </header>
 ```
 
-Nested lists become dropdown navigation and open for both pointer hover and keyboard focus. Other `nav` elements, such as pagination and article navigation, are left alone.
+The first top-level navigation item is treated as the home/brand item, so no Bahunya-specific class or ID is required. Nested lists become dropdown navigation and open for both pointer hover and keyboard focus. Other `nav` elements, such as pagination and article navigation, are left alone.
 
 ## Development
 
@@ -71,7 +71,7 @@ npm run check
 
 ## Goal
 
-Bahunya tries to provide the useful baseline of a CSS framework through semantic HTML selectors rather than framework-specific classes. That keeps markup readable and lets native HTML structure carry more of the styling contract.
+Bahunya provides its baseline through semantic HTML selectors rather than framework-specific classes or IDs. That keeps markup readable and lets native HTML structure carry more of the styling contract.
 
 The project intentionally does not try to express layouts that require application-specific class names.
 
