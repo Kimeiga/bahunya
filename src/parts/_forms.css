@@ -24,16 +24,26 @@ select {
   margin-right: 6px;
   margin-bottom: 6px;
   padding: 10px;
-  border: none;
-  border-radius: 6px;
-  outline: none;
   border: 1px solid var(--border-muted);
+  border-radius: 6px;
+}
+
+option,
+optgroup {
+  color: var(--text-bright);
+  background-color: var(--background);
 }
 
 input[type="color"] {
   min-height: 2rem;
   padding: 8px;
   cursor: pointer;
+}
+
+input[type="checkbox"],
+input[type="radio"],
+input[type="range"] {
+  accent-color: var(--links);
 }
 
 input[type="checkbox"],
@@ -61,6 +71,7 @@ input[type="range"],
 select,
 button,
 textarea {
+  appearance: none;
   -webkit-appearance: none;
 }
 
@@ -71,23 +82,21 @@ textarea {
   width: 100%;
 }
 
-textarea:not([cols]) {
-  width: 100%;
-}
-
 textarea:not([rows]) {
   min-height: 40px;
   height: 140px;
 }
 
-select {
-  background: var(--background) var(--select-arrow) calc(100% - 12px) 50% / 12px
-    no-repeat;
+select:not([multiple]) {
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--text-muted) 50%),
+    linear-gradient(135deg, var(--text-muted) 50%, transparent 50%);
+  background-position:
+    calc(100% - 16px) 50%,
+    calc(100% - 11px) 50%;
+  background-repeat: no-repeat;
+  background-size: 5px 5px;
   padding-right: 35px;
-}
-
-select::-ms-expand {
-  display: none;
 }
 
 select[multiple] {
@@ -96,10 +105,12 @@ select[multiple] {
   overflow-y: auto;
 }
 
-input:focus,
-select:focus,
-textarea:focus {
-  border: 1px solid var(--focus);
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  border-color: var(--focus);
+  outline: 2px solid var(--focus);
+  outline-offset: 1px;
   box-shadow: 0 0 0 3px var(--focus-background);
 }
 
@@ -118,8 +129,7 @@ textarea:disabled {
 fieldset {
   border: 1px var(--border) solid;
   border-radius: 6px;
-  margin: 0;
-  margin-bottom: 12px;
+  margin: 0 0 12px;
   padding: 10px 20px;
 }
 
