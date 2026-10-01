@@ -1,63 +1,79 @@
-body nav:first-of-type {
+body > nav:first-of-type,
+body > header:first-child > nav {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-
-  padding: 0 calc((100vw - 50rem) / 2);
-
+  z-index: 999;
   display: flex;
   align-items: center;
   width: 100%;
-
-  z-index: 999;
+  padding: 0 max(10px, calc((100vw - 50rem) / 2));
+  background: var(--nav-background);
+  backdrop-filter: saturate(180%) blur(8px);
+  -webkit-backdrop-filter: saturate(180%) blur(8px);
 }
 
-body nav:first-of-type:before {
-  /* https://stackoverflow.com/questions/63907743/parent-element-backdrop-filter-does-not-apply-for-its-child */
-  backdrop-filter: saturate(180%) blur(5px);
-  -webkit-backdrop-filter: saturate(180%) blur(5px);
-  content: "";
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-
-body nav:first-of-type #brand {
+body > nav:first-of-type #brand,
+body > header:first-child > nav #brand {
   margin-right: auto;
   font-size: 1.1rem;
 }
 
-body nav:first-of-type a {
-  margin: 10px;
+body > nav:first-of-type a,
+body > header:first-child > nav a {
   display: inline-block;
+  margin: 10px;
 }
 
-body nav:first-of-type ul {
-  list-style-type: none;
+body > nav:first-of-type ul,
+body > header:first-child > nav ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
   margin: 0;
   padding: 0;
-  overflow: hidden;
-  display: inline;
 }
 
-body nav:first-of-type > ul > li {
-  float: left;
+body > nav:first-of-type > ul > li,
+body > header:first-child > nav > ul > li {
+  position: relative;
 }
 
-body nav:first-of-type ul li ul {
+body > nav:first-of-type ul li ul,
+body > header:first-child > nav ul li ul {
   display: none;
   position: absolute;
-  background: rgba(0, 0, 0, 0.5);
-  /* z-index: 1; */
-  backdrop-filter: saturate(180%) blur(5px);
+  top: 100%;
+  left: 0;
+  min-width: max-content;
+  flex-direction: column;
+  align-items: stretch;
+  background: var(--nav-dropdown);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.24);
+  backdrop-filter: saturate(180%) blur(8px);
+  -webkit-backdrop-filter: saturate(180%) blur(8px);
 }
 
-body nav:first-of-type ul li:hover ul {
-  display: block;
+body > nav:first-of-type ul li:hover > ul,
+body > nav:first-of-type ul li:focus-within > ul,
+body > header:first-child > nav ul li:hover > ul,
+body > header:first-child > nav ul li:focus-within > ul {
+  display: flex;
+}
+
+@media (max-width: 40rem) {
+  body > nav:first-of-type,
+  body > header:first-child > nav {
+    align-items: flex-start;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+  }
+
+  body > nav:first-of-type ul li ul,
+  body > header:first-child > nav ul li ul {
+    position: fixed;
+    top: auto;
+  }
 }
