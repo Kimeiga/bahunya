@@ -1,5 +1,6 @@
 html {
   box-sizing: border-box;
+  scroll-padding-top: 5rem;
 }
 
 *,
@@ -10,12 +11,33 @@ html {
 
 body {
   font-family: var(--sans-serif);
-  line-height: 1.7;
-  max-width: 50rem;
-  margin: 6rem auto;
-  padding: 0 10px;
-  word-wrap: break-word;
+  font-size: clamp(1rem, 0.975rem + 0.1vw, 1.0625rem);
+  line-height: 1.55;
+  letter-spacing: -0.005em;
+  max-width: var(--content-width);
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: var(--space-3) clamp(var(--space-4), 4vw, var(--space-6)) var(--space-16);
+  overflow-wrap: anywhere;
   color: var(--text-main);
   background: var(--background-body);
   text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *:before,
+  *:after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }
