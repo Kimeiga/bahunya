@@ -1,6 +1,6 @@
 html {
   box-sizing: border-box;
-  scroll-padding-top: 5rem;
+  scroll-padding-top: 4.5rem;
 }
 
 *,
@@ -11,8 +11,8 @@ html {
 
 body {
   font-family: var(--sans-serif);
-  font-size: clamp(1rem, 0.975rem + 0.1vw, 1.0625rem);
-  line-height: 1.55;
+  font-size: 1rem;
+  line-height: 1.5;
   letter-spacing: -0.005em;
   max-width: var(--content-width);
   min-height: 100vh;
