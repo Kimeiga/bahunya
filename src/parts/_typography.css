@@ -52,6 +52,7 @@ a[href^="tel:"]::before { content: "📞 "; }
 a[href^="sms:"]::before { content: "💬 "; }
 
 mark {
+  color: var(--mark-text);
   background-color: var(--links);
   border-radius: 2px;
   padding: 0 2px;
