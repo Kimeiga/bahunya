@@ -71,7 +71,7 @@ export function minifyCss(css) {
   return stripComments(css)
     .replace(/\s+/g, " ")
     .replace(/\s*([{}:;,>])\s*/g, "$1")
-    .replace(/;}+/g, "}")
+    .replace(/;}/g, "}")
     .trim();
 }
 

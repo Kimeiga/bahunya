@@ -76,11 +76,16 @@ main > header:first-child > img:first-child {
 
 blockquote {
   margin: var(--space-6) 0;
-  padding: var(--space-4) var(--space-6);
+  padding: 0 0 0 var(--space-6);
   color: var(--text-main);
-  background: var(--surface-raised);
-  border-left: 3px solid var(--focus);
-  border-radius: 0 var(--radius) var(--radius) 0;
+  background: transparent;
+  border-left: 4px solid var(--border-bright);
+  border-radius: 0;
+}
+
+blockquote blockquote {
+  margin: var(--space-4) 0;
+  padding-left: var(--space-4);
 }
 
 blockquote > :first-child {
@@ -120,8 +125,18 @@ mark {
 
 ul,
 ol {
-  margin: 0 0 var(--space-4);
-  padding-left: 1.5em;
+  margin: 0 0 var(--space-6);
+  padding-left: 1.6em;
+}
+
+li + li {
+  margin-top: var(--space-2);
+}
+
+li > ul,
+li > ol {
+  margin-top: var(--space-2);
+  margin-bottom: 0;
 }
 
 aside {
