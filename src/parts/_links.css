@@ -1,8 +1,14 @@
 a {
-  text-decoration: none;
   color: var(--links);
+  text-decoration: none;
 }
 
 a:hover {
   text-decoration: underline;
+}
+
+a:focus-visible {
+  border-radius: 2px;
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
 }
