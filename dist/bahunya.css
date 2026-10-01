@@ -7,6 +7,7 @@
   --background-alt: #1a242f;
 
   --selection: #1c76c5;
+  --mark-text: #0d1117;
   --text-main: #c9d1d9;
   --text-bright: #e3e9f0;
   --text-muted: #8b949e;
@@ -41,6 +42,7 @@
   --background-alt: #f0f3f6;
 
   --selection: #b6d7ff;
+  --mark-text: #ffffff;
   --text-main: #1f2328;
   --text-bright: #0d1117;
   --text-muted: #59636e;
@@ -136,6 +138,7 @@ a[href^="tel:"]::before { content: "📞 "; }
 a[href^="sms:"]::before { content: "💬 "; }
 
 mark {
+  color: var(--mark-text);
   background-color: var(--links);
   border-radius: 2px;
   padding: 0 2px;
@@ -274,10 +277,15 @@ select[multiple] {
   overflow-y: auto;
 }
 
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--focus);
+}
+
 input:focus-visible,
 select:focus-visible,
 textarea:focus-visible {
-  border-color: var(--focus);
   outline: 2px solid var(--focus);
   outline-offset: 1px;
   box-shadow: 0 0 0 3px var(--focus-background);
