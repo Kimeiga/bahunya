@@ -1,4 +1,5 @@
-import { mkdir, readFile, writeFile, watch } from "node:fs";
+import { watch } from "node:fs";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 
@@ -13,7 +14,7 @@ export async function bundleCss(file = entry, stack = []) {
   }
 
   const source = await readFile(absolute, "utf8");
-  const importPattern = /@import\s+["']([^"']+)["'];/g;
+  const importPattern = /@import\s+["\']([^"\']+)["\'];/g;
   let result = "";
   let lastIndex = 0;
 
@@ -47,7 +48,7 @@ function stripComments(css) {
       continue;
     }
 
-    if (char === '"' || char === "'") {
+    if (char === "\"" || char === "\'") {
       quote = char;
       out += char;
       continue;
@@ -78,23 +79,10 @@ export async function build() {
   const bundled = (await bundleCss()).trim() + "\n";
   const minified = minifyCss(bundled) + "\n";
 
-  await new Promise((resolvePromise, rejectPromise) =>
-    mkdir(distDir, { recursive: true }, (error) =>
-      error ? rejectPromise(error) : resolvePromise()
-    )
-  );
-
+  await mkdir(distDir, { recursive: true });
   await Promise.all([
-    new Promise((resolvePromise, rejectPromise) =>
-      writeFile(join(distDir, "bahunya.css"), bundled, "utf8", (error) =>
-        error ? rejectPromise(error) : resolvePromise()
-      )
-    ),
-    new Promise((resolvePromise, rejectPromise) =>
-      writeFile(join(distDir, "bahunya.min.css"), minified, "utf8", (error) =>
-        error ? rejectPromise(error) : resolvePromise()
-      )
-    ),
+    writeFile(join(distDir, "bahunya.css"), bundled, "utf8"),
+    writeFile(join(distDir, "bahunya.min.css"), minified, "utf8"),
   ]);
 
   return {
