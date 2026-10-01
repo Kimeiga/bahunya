@@ -197,6 +197,7 @@ main > header:first-child {
 }
 
 main > header:first-child > :first-child:not(img),
+main > header:first-child > img:first-child + h1,
 section > header > :first-child,
 article > header > :first-child {
   margin-top: 0;
@@ -366,11 +367,12 @@ label {
   font-weight: 550;
 }
 
-input:not([type="checkbox"]):not([type="radio"]),
-input[type="range"],
 select,
 button,
-textarea {
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+input[type="range"] {
   appearance: none;
   -webkit-appearance: none;
 }
@@ -851,6 +853,11 @@ body > header:first-child > nav > ul > li:last-child > ul {
     padding-inline: 0.65rem;
     font-size: 0.875rem;
   }
+
+  body > nav:first-of-type ul li ul,
+  body > header:first-child > nav ul li ul {
+    min-width: min(14rem, calc(100vw - 2rem));
+  }
 }
 
 section {
@@ -867,6 +874,10 @@ article {
 
 article > header {
   margin-bottom: var(--space-4);
+}
+
+article > header > :last-child {
+  margin-bottom: 0;
 }
 
 article > :first-child,
