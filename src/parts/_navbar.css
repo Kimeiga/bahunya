@@ -1,6 +1,6 @@
 body:has(> nav:first-of-type),
 body:has(> header:first-child > nav) {
-  padding-top: calc(3.25rem + var(--space-6));
+  padding-top: calc(3rem + var(--space-6));
 }
 
 body > nav:first-of-type,
@@ -14,7 +14,7 @@ body > header:first-child > nav {
   flex-wrap: nowrap;
   align-items: center;
   gap: var(--space-1);
-  min-height: 3.25rem;
+  height: 3rem;
   width: 100%;
   margin: 0;
   padding: 0 max(var(--space-4), calc((100vw - var(--content-width)) / 2));
@@ -43,26 +43,43 @@ body > header:first-child > nav > ul > li:first-child {
 }
 
 body > nav:first-of-type a,
-body > header:first-child > nav a {
+body > header:first-child > nav a,
+body > nav:first-of-type summary,
+body > header:first-child > nav summary {
   display: inline-flex;
   flex: 0 0 auto;
   align-items: center;
-  min-height: var(--control-height);
+  justify-content: center;
+  height: 100%;
+  min-height: 0;
   margin: 0;
   padding: 0 var(--space-3);
   color: var(--text-main);
+  border: 0;
   border-radius: var(--radius-sm);
+  background: transparent;
+  font: inherit;
   font-size: 0.875rem;
-  line-height: 1.2;
+  font-weight: 450;
+  line-height: 1;
   text-decoration: none;
   white-space: nowrap;
+  cursor: pointer;
+  list-style: none;
   transition:
     color 140ms ease,
     background-color 140ms ease;
 }
 
+body > nav:first-of-type summary::-webkit-details-marker,
+body > header:first-child > nav summary::-webkit-details-marker {
+  display: none;
+}
+
 body > nav:first-of-type a:hover,
-body > header:first-child > nav a:hover {
+body > header:first-child > nav a:hover,
+body > nav:first-of-type summary:hover,
+body > header:first-child > nav summary:hover {
   color: var(--text-bright);
   background: rgba(255, 255, 255, 0.08);
   text-decoration: none;
@@ -89,6 +106,7 @@ body > nav:first-of-type > ul,
 body > header:first-child > nav > ul {
   flex: 1 1 auto;
   flex-wrap: nowrap;
+  height: 100%;
 }
 
 body > nav:first-of-type > ul > li,
@@ -96,10 +114,39 @@ body > header:first-child > nav > ul > li {
   position: relative;
   display: flex;
   flex: 0 0 auto;
+  align-items: center;
+  height: 100%;
+  margin-top: 0;
+}
+
+body > nav:first-of-type details,
+body > header:first-child > nav details {
+  position: relative;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+}
+
+body > nav:first-of-type details > summary,
+body > header:first-child > nav details > summary {
+  height: 100%;
+  padding-block: 0;
+}
+
+body > nav:first-of-type details[open] > summary,
+body > header:first-child > nav details[open] > summary {
+  margin-bottom: 0;
+  border-bottom: 0;
+  color: var(--text-bright);
 }
 
 body > nav:first-of-type ul li ul,
-body > header:first-child > nav ul li ul {
+body > header:first-child > nav ul li ul,
+body > nav:first-of-type details > ul,
+body > header:first-child > nav details > ul {
   display: none;
   position: absolute;
   top: calc(100% + var(--space-2));
@@ -109,6 +156,8 @@ body > header:first-child > nav ul li ul {
   flex-direction: column;
   align-items: stretch;
   gap: 0;
+  max-height: min(70vh, 32rem);
+  overflow-y: auto;
   padding: var(--space-2);
   background: var(--nav-dropdown);
   border: 1px solid var(--border);
@@ -119,19 +168,26 @@ body > header:first-child > nav ul li ul {
 }
 
 body > nav:first-of-type ul li ul a,
-body > header:first-child > nav ul li ul a {
+body > header:first-child > nav ul li ul a,
+body > nav:first-of-type details > ul a,
+body > header:first-child > nav details > ul a {
   width: 100%;
+  height: auto;
+  min-height: var(--control-height);
+  justify-content: flex-start;
 }
 
 body > nav:first-of-type ul li:hover > ul,
 body > nav:first-of-type ul li:focus-within > ul,
 body > header:first-child > nav ul li:hover > ul,
-body > header:first-child > nav ul li:focus-within > ul {
+body > header:first-child > nav ul li:focus-within > ul,
+body > nav:first-of-type details[open] > ul,
+body > header:first-child > nav details[open] > ul {
   display: flex;
 }
 
-body > nav:first-of-type > ul > li:last-child > ul,
-body > header:first-child > nav > ul > li:last-child > ul {
+body > nav:first-of-type > ul > li:last-child ul,
+body > header:first-child > nav > ul > li:last-child ul {
   right: 0;
   left: auto;
 }
@@ -155,13 +211,32 @@ body > header:first-child > nav > ul > li:last-child > ul {
   }
 
   body > nav:first-of-type a,
-  body > header:first-child > nav a {
+  body > header:first-child > nav a,
+  body > nav:first-of-type summary,
+  body > header:first-child > nav summary {
     padding-inline: 0.625rem;
     font-size: 0.8125rem;
   }
 
-  body > nav:first-of-type ul li ul,
-  body > header:first-child > nav ul li ul {
-    display: none !important;
+  body > nav:first-of-type details > ul,
+  body > header:first-child > nav details > ul {
+    position: fixed;
+    top: 3rem;
+    left: 0;
+    right: 0;
+    min-width: 0;
+    width: 100vw;
+    max-height: calc(100dvh - 3rem);
+    padding: var(--space-3) var(--space-4) var(--space-4);
+    background: var(--nav-dropdown);
+    border-width: 0 0 1px;
+    border-radius: 0;
+  }
+
+  body > nav:first-of-type details > ul a,
+  body > header:first-child > nav details > ul a {
+    min-height: 2.75rem;
+    padding-inline: var(--space-3);
+    font-size: 0.9375rem;
   }
 }
