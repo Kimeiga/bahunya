@@ -1,4 +1,14 @@
 @media print {
+  body {
+    max-width: none;
+    margin: 0;
+  }
+
+  body > nav:first-of-type,
+  body > header:first-child > nav {
+    display: none;
+  }
+
   body,
   pre,
   code,
@@ -6,12 +16,14 @@
   details,
   button,
   input,
+  select,
   textarea {
     background-color: #fff;
   }
 
   button,
   input,
+  select,
   textarea {
     border: 1px solid #000;
   }
@@ -27,6 +39,7 @@
   code,
   button,
   input,
+  select,
   textarea,
   footer,
   summary,
@@ -34,10 +47,7 @@
     color: #000;
   }
 
-  summary::marker {
-    color: #000;
-  }
-
+  summary::marker,
   summary::-webkit-details-marker {
     color: #000;
   }
