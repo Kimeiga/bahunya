@@ -15,9 +15,19 @@ body > header:first-child > nav {
   -webkit-backdrop-filter: saturate(180%) blur(8px);
 }
 
-body > nav:first-of-type #brand,
-body > header:first-child > nav #brand {
+body > nav:first-of-type > a:first-of-type,
+body > header:first-child > nav > a:first-of-type {
   margin-right: auto;
+  font-size: 1.1rem;
+}
+
+body > nav:first-of-type > ul > li:first-child,
+body > header:first-child > nav > ul > li:first-child {
+  margin-right: auto;
+}
+
+body > nav:first-of-type > ul > li:first-child > a,
+body > header:first-child > nav > ul > li:first-child > a {
   font-size: 1.1rem;
 }
 
