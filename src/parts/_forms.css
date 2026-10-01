@@ -9,7 +9,7 @@ input[type="radio"] {
   cursor: pointer;
 }
 
-input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="submit"]):not([type="reset"]):not([type="button"]):not([type="color"]),
 select,
 textarea {
   display: block;
