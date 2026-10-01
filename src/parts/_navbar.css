@@ -137,4 +137,9 @@ body > header:first-child > nav > ul > li:last-child > ul {
     padding-inline: 0.65rem;
     font-size: 0.875rem;
   }
+
+  body > nav:first-of-type ul li ul,
+  body > header:first-child > nav ul li ul {
+    min-width: min(14rem, calc(100vw - 2rem));
+  }
 }
