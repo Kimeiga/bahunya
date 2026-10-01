@@ -55,7 +55,22 @@ or a navigation element inside the first top-level header:
 </header>
 ```
 
-The first top-level navigation item is treated as the home/brand item, so no Bahunya-specific class or ID is required. Nested lists become dropdown navigation and open for both pointer hover and keyboard focus. Other `nav` elements, such as pagination and article navigation, are left alone.
+The first top-level navigation item is treated as the home/brand item, so no Bahunya-specific class or ID is required. Plain nested lists support pointer hover and keyboard focus. For a submenu that must toggle reliably on touch devices, use native semantic `details`/`summary`:
+
+```html
+<nav aria-label="Primary">
+  <a href="/">Home</a>
+  <details>
+    <summary>Products</summary>
+    <ul>
+      <li><a href="/one">One</a></li>
+      <li><a href="/two">Two</a></li>
+    </ul>
+  </details>
+</nav>
+```
+
+Other `nav` elements, such as pagination and article navigation, are left alone.
 
 ## Development
 

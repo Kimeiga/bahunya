@@ -70,7 +70,8 @@ test("visual system stays responsive, touch-friendly, and classless", async () =
 
   assert.match(css, /--control-height: 2\.75rem/);
   assert.match(css, /--radius-lg: 1\.25rem/);
-  assert.match(css, /font-size: clamp\(2rem,/);
+  assert.match(css, /font-size: clamp\(1\.75rem,/);
+  assert.match(css, /font-size: 1rem;/);
   assert.match(css, /position: fixed/);
   assert.match(css, /min-height: var\(--control-height\)/);
   assert.match(css, /prefers-reduced-motion: reduce/);
@@ -104,6 +105,32 @@ test("document content uses flat hierarchy rather than cards", async () => {
   assert.match(css, /article \{[\s\S]*background: transparent;[\s\S]*border: 0;/);
   assert.match(css, /blockquote \{[\s\S]*background: transparent;[\s\S]*border-left: 4px solid var\(--border-bright\);/);
   assert.match(css, /table \{[\s\S]*background: transparent;[\s\S]*border: 0;/);
+});
+
+test("mobile navigation is vertically centered and touch-toggleable", async () => {
+  const [css, demo] = await Promise.all([
+    bundleCss(),
+    readFile(join(root, "demo.html"), "utf8"),
+  ]);
+
+  assert.match(css, /height: 3rem/);
+  assert.match(css, /align-items: center/);
+  assert.match(css, /details\[open\] > ul/);
+  assert.match(css, /position: fixed/);
+  assert.doesNotMatch(css, /display: none !important/);
+  assert.match(demo, /<details>/);
+  assert.match(demo, /<summary>Text<\/summary>/);
+  assert.doesNotMatch(demo, /\sclass="/);
+});
+
+test("heading scale stays close to the compact mobile reference", async () => {
+  const css = await bundleCss();
+
+  assert.match(css, /h1 \{[\s\S]*font-size: clamp\(1\.75rem,/);
+  assert.match(css, /h2 \{[\s\S]*font-size: clamp\(1\.375rem,/);
+  assert.match(css, /h3 \{[\s\S]*font-size: clamp\(1\.1875rem,/);
+  assert.match(css, /body \{[\s\S]*font-size: 1rem;/);
+  assert.match(css, /line-height: 1\.5/);
 });
 
 test("package build is dependency-free", async () => {
