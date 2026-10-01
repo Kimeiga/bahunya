@@ -1,14 +1,20 @@
 a {
   color: var(--links);
   text-decoration: none;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.16em;
+  transition:
+    color 140ms ease,
+    background-color 140ms ease;
 }
 
 a:hover {
+  color: var(--text-bright);
   text-decoration: underline;
 }
 
 a:focus-visible {
-  border-radius: 2px;
+  border-radius: var(--radius-sm);
   outline: 2px solid var(--focus);
   outline-offset: 3px;
 }
