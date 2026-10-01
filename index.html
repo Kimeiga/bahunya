@@ -1,155 +1,105 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bahunya</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bahunya.css</title>
+  <meta name="description" content="A small classless CSS framework with a semantic navbar, dark default theme, and optional light theme.">
+  <link rel="canonical" href="https://kimeiga.github.io/bahunya/">
   <link rel="stylesheet" href="dist/bahunya.min.css">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="icon" href="src/bahunya-logo.png">
 
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://hakanalpay.com/bahunya/" />
-  <meta property="og:title" content="Bahunya" />
-  <meta property="og:description" content="A classless CSS framework with a navbar and dark styling." />
-  <meta property="og:image" content="https://raw.githubusercontent.com/kimeiga/bahunya/master/src/bahunya-logo.png" />
-  <meta property="og:image:width" content="500" />
-  <meta property="og:image:height" content="500" />
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kimeiga.github.io/bahunya/">
+  <meta property="og:title" content="Bahunya.css">
+  <meta property="og:description" content="A small classless CSS framework for semantic HTML.">
+  <meta property="og:image" content="https://raw.githubusercontent.com/kimeiga/bahunya/master/src/bahunya-logo.png">
+  <meta property="og:image:width" content="500">
+  <meta property="og:image:height" content="500">
+  <meta name="twitter:card" content="summary_large_image">
 
-  <link rel="manifest" href="site.webmanifest" />
-  <meta name="apple-mobile-web-app-title" content="Bahunya.css" />
-  <meta name="application-name" content="Bahunya.css" />
-  <meta name="msapplication-TileColor" content="#e3bc5e" />
-  <meta name="theme-color" content="#e3bc5e" />
+  <meta name="apple-mobile-web-app-title" content="Bahunya.css">
+  <meta name="application-name" content="Bahunya.css">
+  <meta name="theme-color" content="#e3bc5e">
 
   <script type="application/ld+json">
-    {
-      "@context": "http://www.schema.org",
-      "@type": "WebSite",
-      "name": "Bahunya",
-      "alternateName": "Bahunya",
-      "url": "https://hakanalpay.com/bahunya/"
-    }
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareSourceCode",
+    "name": "Bahunya",
+    "codeRepository": "https://github.com/Kimeiga/bahunya",
+    "url": "https://kimeiga.github.io/bahunya/",
+    "programmingLanguage": "CSS",
+    "license": "https://opensource.org/license/mit"
+  }
   </script>
-
-  <link rel="shortcut icon" href="src/bahunya-logo.png" type="image/x-icon">
-
-
 </head>
-
 <body>
-  <nav>
-    <a href="index.html">Bahunya</a>
-    <a href="./demo.html">Element Demo</a>
+  <nav aria-label="Primary">
+    <a id="brand" href="./">Bahunya</a>
+    <a href="demo.html">Element demo</a>
+    <a href="https://github.com/Kimeiga/bahunya">GitHub</a>
   </nav>
-  <div style="text-align: center;">
-    <img src="src/bahunya-logo.svg" alt="Bahunya logo" style="height: 500px;">
-    <h1>Bahunya</h1>
-  </div>
-  <p>A <i>classless</i> CSS framework with a <i>navbar</i> and <i>dark styling</i> for around 10.46 kB.</p>
-  <p>Use it by pasting the following into your <code>&lt;head&gt;</code></p>
 
-  <!-- TODO: change -->
-  <pre
-    id="link-snippet"><code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kimeiga/bahunya/dist/bahunya.min.css"></code></pre>
+  <main>
+    <header>
+      <img src="src/bahunya-logo.svg" alt="Bahunya logo" width="320" height="320">
+      <h1>Bahunya</h1>
+      <p>A classless CSS framework for semantic HTML.</p>
+    </header>
 
-  <button type="button" id="copy-button">
-    Copy to clipboard
-    <span id="copy-button-feedback"></span>
-  </button>
+    <section aria-labelledby="install">
+      <h2 id="install">Install</h2>
+      <p>Paste this into your document's <code>&lt;head&gt;</code>:</p>
+      <pre id="link-snippet"><code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kimeiga/bahunya/dist/bahunya.min.css"&gt;</code></pre>
+      <button type="button" id="copy-button">Copy to clipboard</button>
+      <span id="copy-button-feedback" role="status" aria-live="polite"></span>
+    </section>
 
-  <p>Now write your web app with semantic html elements and watch it look pretty right out of the box, no css classes
-    needed!</p>
+    <section aria-labelledby="themes">
+      <h2 id="themes">Themes</h2>
+      <p>Bahunya is dark by default. Add <code>data-theme="light"</code> to <code>&lt;html&gt;</code> for the bundled light theme.</p>
+      <pre><code>&lt;html data-theme="light"&gt;</code></pre>
+    </section>
 
-  <a href="https://github.com/kimeiga/bahunya">See the project on Github~</a>
-  <hr>
-
-  <h3>Goal of the Project</h3>
-
-  <p>The ultimate goal of Bahunya is to be a CSS "framework" that can provide almost everything you really need for a
-    web app or website without introducing any new CSS classes at all. </p>
-
-  <p>I observed that many of the most common UI elements in websites can be wholly described by semantic HTML elements
-    rather than `&lt;div&gt;`'s with classes. What's more is that most CSS frameworks tend to style these elements very
-    similarly. So why not remove the classes altogether and use semantic html elements (`&lt;nav&gt;`, `&lt;main&gt;`,
-    etc), which can help improve accessiblity for screen readers, and also make the website source easier to read and
-    write for developers.</p>
-
-  <p>That's the north star of this project: to get as far as possible toward that goal without introducing classes (this
-    will mean Bahunya might not have a grid system or other things where classes needed). If you have ideas on more
-    things to add without classes, feel free to contribute!</p>
-
-  <h2>How to make the navbar</h2>
-
-  <p>Example:</p>
-
-  <pre><code>&lt;nav&gt;
-  &lt;a href="/"&gt;Bahunya&lt;/a&gt;
-  &lt;a href="/test.html"&gt;test&lt;/a&gt;
-  &lt;a href="/markdown.html"&gt;markdown&lt;/a&gt;
+    <section aria-labelledby="navigation">
+      <h2 id="navigation">Navigation</h2>
+      <p>A direct child <code>&lt;nav&gt;</code> becomes the site navbar. Navigation elsewhere in the document keeps normal document flow.</p>
+      <pre><code>&lt;nav aria-label="Primary"&gt;
+  &lt;a href="/"&gt;Home&lt;/a&gt;
+  &lt;a href="/about"&gt;About&lt;/a&gt;
 &lt;/nav&gt;</code></pre>
+      <p>Nested lists work as dropdowns with pointer hover or keyboard focus.</p>
+    </section>
 
-  <p>What about a navbar with nested lists?</p>
-
-  <pre><code>&lt;nav&gt;
-  &lt;ul&gt;
-    &lt;li&gt;
-      &lt;a href="#text"&gt;Text&lt;/a&gt;
-      &lt;ul&gt;
-          &lt;li&gt;&lt;a href="#text__headings"&gt;Headings&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href="#text__paragraphs"&gt;Paragraphs&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href="#text__blockquotes"&gt;Blockquotes&lt;/a&gt;&lt;/li&gt;
-          ...
-      &lt;/ul&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-      &lt;a href="#embedded"&gt;Embedded content&lt;/a&gt;
-      &lt;ul&gt;
-          &lt;li&gt;&lt;a href="#embedded__images"&gt;Images&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href="#embedded__audio"&gt;Audio&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href="#embedded__video"&gt;Video&lt;/a&gt;&lt;/li&gt;
-          ...
-      &lt;/ul&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-      &lt;a href="#forms"&gt;Form elements&lt;/a&gt;
-      &lt;ul&gt;
-          &lt;li&gt;&lt;a href="#forms__input"&gt;Input fields&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href="#forms__select"&gt;Select menus&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href="#forms__checkbox"&gt;Checkboxes&lt;/a&gt;&lt;/li&gt;
-          ...
-      &lt;/ul&gt;
-    &lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/nav&gt;</code></pre>
-
-  <p>As you can see, the navbar works whether you use a unordered list with sub-unordered-lists
-    (<code>&lt;ul&gt;</code>'s with <code>&lt;li&gt;</code>'s) or if you just put the <code>&lt;a&gt;</code>'s right
-    under the main <code>&lt;nav&gt;</code>. Both work, although I think the latter option might be better for screen
-    readers.</p>
+    <section aria-labelledby="goal">
+      <h2 id="goal">Goal</h2>
+      <p>Bahunya styles semantic HTML directly so small sites and web apps can start with readable markup and a useful visual baseline without learning framework-specific class names.</p>
+    </section>
+  </main>
 
   <footer>
-    <p><small>This project was based largely on Water.css and Tacit; credit to the creators.</small></p>
-
-    <p><small>As for me, I'm <a href="https://hakanalpay.com">Kimeiga</a> and I made this to help me get web apps off
-        the ground without worrying too much styling.</small></p>
-
+    <small>Created by <a href="https://hakanalpay.com">Hakan Alpay</a>. Inspired by Water.css and Tacit. MIT licensed.</small>
   </footer>
-  <script defer>
-    const copyButton = document.getElementById('copy-button')
-    const copyButtonFeedback = document.getElementById('copy-button-feedback')
 
-    copyButton.addEventListener('click', () => {
-      const clipboard = navigator.clipboard || window.clipboard
-      const snippetText = document.querySelector(`#link-snippet code`).textContent
+  <script>
+    const copyButton = document.getElementById("copy-button");
+    const feedback = document.getElementById("copy-button-feedback");
+    const snippet = document.querySelector("#link-snippet code").textContent;
 
-      clipboard.writeText(snippetText)
-        .then(() => { copyButtonFeedback.textContent = '✔' })
-        .catch(() => { copyButtonFeedback.textContent = '❌' })
-        .then(() => setTimeout(() => { copyButtonFeedback.textContent = '' }, 1000))
-    })
+    copyButton.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(snippet);
+        feedback.textContent = "Copied";
+      } catch {
+        feedback.textContent = "Copy failed";
+      }
+
+      window.setTimeout(() => {
+        feedback.textContent = "";
+      }, 1500);
+    });
   </script>
 </body>
-
 </html>

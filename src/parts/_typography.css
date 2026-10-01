@@ -7,33 +7,13 @@ h5 {
   line-height: 1.3;
 }
 
-h1 {
-  font-size: 2.488rem;
-}
-
-h2 {
-  font-size: 2.074rem;
-}
-
-h3 {
-  font-size: 1.728rem;
-}
-
-h4 {
-  font-size: 1.44rem;
-}
-
-h5 {
-  font-size: 1.2rem;
-}
-
-h6 {
-  font-size: 1rem;
-}
-
-small {
-  font-size: 0.833rem;
-}
+h1 { font-size: 2.488rem; }
+h2 { font-size: 2.074rem; }
+h3 { font-size: 1.728rem; }
+h4 { font-size: 1.44rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+small { font-size: 0.833rem; }
 
 h1,
 h2,
@@ -48,18 +28,18 @@ strong {
 blockquote {
   border-left: 4px solid var(--focus);
   margin: 1.5em 0;
-  padding: 0em 1em;
+  padding: 0 1em;
 }
 
-blockquote> :first-child {
+blockquote > :first-child {
   margin-top: 0;
 }
 
-blockquote> :last-child {
+blockquote > :last-child {
   margin-bottom: 0;
 }
 
-blockquote>footer {
+blockquote > footer {
   border: 0;
 }
 
@@ -67,22 +47,15 @@ address {
   font-style: normal;
 }
 
-a[href^="mailto\:"]::before {
-  content: "📧 ";
-}
-
-a[href^="tel\:"]::before {
-  content: "📞 ";
-}
-
-a[href^="sms\:"]::before {
-  content: "💬 ";
-}
+a[href^="mailto:"]::before { content: "📧 "; }
+a[href^="tel:"]::before { content: "📞 "; }
+a[href^="sms:"]::before { content: "💬 "; }
 
 mark {
+  color: var(--mark-text);
   background-color: var(--links);
   border-radius: 2px;
-  padding: 0 2px 0 2px;
+  padding: 0 2px;
 }
 
 ul,
@@ -92,13 +65,21 @@ ol {
 
 aside {
   width: 40%;
-  padding-left: .5rem;
-  margin-left: .5rem;
+  padding-left: 0.5rem;
+  margin-left: 0.5rem;
   float: right;
   border-left: 2px solid var(--focus);
   font-style: italic;
 }
 
-aside>p {
-  margin: .5rem;
+aside > p {
+  margin: 0.5rem;
+}
+
+@media (max-width: 40rem) {
+  aside {
+    width: auto;
+    margin-left: 0;
+    float: none;
+  }
 }
