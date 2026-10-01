@@ -98,6 +98,14 @@ test("navbar keeps the fixed edge-to-edge blurred header contract", async () => 
   assert.match(css, /body:has\(> nav:first-of-type\)/);
 });
 
+test("document content uses flat hierarchy rather than cards", async () => {
+  const css = await bundleCss();
+
+  assert.match(css, /article \{[\s\S]*background: transparent;[\s\S]*border: 0;/);
+  assert.match(css, /blockquote \{[\s\S]*background: transparent;[\s\S]*border-left: 4px solid var\(--border-bright\);/);
+  assert.match(css, /table \{[\s\S]*background: transparent;[\s\S]*border: 0;/);
+});
+
 test("package build is dependency-free", async () => {
   const pkg = JSON.parse(await readFile(join(root, "package.json"), "utf8"));
   assert.equal(pkg.devDependencies, undefined);
