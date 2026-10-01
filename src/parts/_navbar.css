@@ -5,8 +5,10 @@ body > header:first-child > nav {
   left: 0;
   z-index: 999;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   width: 100%;
+  max-width: 100vw;
   padding: 0 max(10px, calc((100vw - 50rem) / 2));
   background: var(--nav-background);
   backdrop-filter: saturate(180%) blur(8px);
@@ -32,6 +34,11 @@ body > header:first-child > nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+body > nav:first-of-type > ul,
+body > header:first-child > nav > ul {
+  flex-wrap: wrap;
 }
 
 body > nav:first-of-type > ul > li,
@@ -61,19 +68,4 @@ body > nav:first-of-type ul li:focus-within > ul,
 body > header:first-child > nav ul li:hover > ul,
 body > header:first-child > nav ul li:focus-within > ul {
   display: flex;
-}
-
-@media (max-width: 40rem) {
-  body > nav:first-of-type,
-  body > header:first-child > nav {
-    align-items: flex-start;
-    overflow-x: auto;
-    overscroll-behavior-inline: contain;
-  }
-
-  body > nav:first-of-type ul li ul,
-  body > header:first-child > nav ul li ul {
-    position: fixed;
-    top: auto;
-  }
 }
