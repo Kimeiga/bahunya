@@ -3,34 +3,36 @@ samp,
 tt,
 var,
 kbd {
-  font-size: 85%;
   font-family: var(--monospace);
+  font-size: 0.875em;
 }
 
 code,
 samp,
 tt,
 kbd {
-  padding: 0.2em 0.4em;
-  border-radius: 0.4em;
-}
-
-code,
-samp,
-tt {
+  padding: 0.15em 0.4em;
   background: var(--background-bright);
+  border-radius: 0.4rem;
 }
 
 pre {
   display: block;
+  margin: 0 0 var(--space-4);
+  padding: var(--space-4);
   overflow-x: auto;
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  line-height: 1.5;
 }
 
-pre>code {
-  background: var(--background);
-  padding: 1em;
+pre > code {
   display: block;
-  overflow-x: auto;
+  padding: 0;
+  overflow-x: visible;
+  background: transparent;
+  border-radius: 0;
 }
 
 var {
@@ -39,6 +41,6 @@ var {
 }
 
 kbd {
+  color: var(--text-bright);
   border: 1px solid var(--border-bright);
-  font-family: var(--monospace);
 }
