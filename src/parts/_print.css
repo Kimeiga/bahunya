@@ -2,6 +2,7 @@
   body {
     max-width: none;
     margin: 0;
+    padding: 0;
   }
 
   body > nav:first-of-type,
@@ -10,22 +11,34 @@
   }
 
   body,
+  article,
+  aside,
+  fieldset,
+  table,
+  details,
+  dialog,
   pre,
   code,
   summary,
-  details,
   button,
   input,
   select,
   textarea {
-    background-color: #fff;
+    background: #fff;
+    box-shadow: none;
   }
 
+  article,
+  aside,
+  fieldset,
+  table,
+  details,
+  dialog,
   button,
   input,
   select,
   textarea {
-    border: 1px solid #000;
+    border-color: #bbb;
   }
 
   body,
@@ -53,7 +66,7 @@
   }
 
   tbody tr:nth-child(even) {
-    background-color: #f2f2f2;
+    background: #f2f2f2;
   }
 
   a {
