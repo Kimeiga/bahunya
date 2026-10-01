@@ -105,10 +105,15 @@ select[multiple] {
   overflow-y: auto;
 }
 
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--focus);
+}
+
 input:focus-visible,
 select:focus-visible,
 textarea:focus-visible {
-  border-color: var(--focus);
   outline: 2px solid var(--focus);
   outline-offset: 1px;
   box-shadow: 0 0 0 3px var(--focus-background);
