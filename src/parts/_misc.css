@@ -15,39 +15,55 @@ audio {
   max-width: 100%;
 }
 
+iframe {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
 hr {
+  margin: var(--space-8) 0;
   border: none;
-  border-top: 1px solid var(--border-bright);
-  margin: 1em 0;
+  border-top: 1px solid var(--border);
 }
 
 table {
-  border-collapse: collapse;
-  margin-bottom: 10px;
-  width: 100%;
-  table-layout: fixed;
-  overflow-x: auto;
   display: block;
+  width: 100%;
+  margin: 0 0 var(--space-6);
+  overflow-x: auto;
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  border-collapse: collapse;
+  table-layout: auto;
 }
 
 table caption {
+  padding: var(--space-3) var(--space-4);
+  color: var(--text-muted);
   text-align: left;
 }
 
 td,
 th {
-  padding: 6px;
+  padding: var(--space-3) var(--space-4);
   text-align: left;
   vertical-align: top;
-  overflow-wrap: anywhere;
+  overflow-wrap: normal;
+  white-space: nowrap;
+}
+
+th {
+  color: var(--text-bright);
+  font-weight: 650;
 }
 
 thead {
-  border-bottom: 1px solid var(--border-bright);
+  border-bottom: 1px solid var(--border);
 }
 
 tfoot {
-  border-top: 1px solid var(--border-bright);
+  border-top: 1px solid var(--border);
 }
 
 tbody tr:nth-child(even) {
@@ -59,60 +75,82 @@ tbody tr:nth-child(even) button {
 }
 
 tbody tr:nth-child(even) button:hover {
-  background-color: var(--background-body);
+  background-color: var(--surface-hover);
 }
 
 ::selection {
-  background-color: var(--selection);
   color: var(--text-bright);
+  background-color: var(--selection);
+}
+
+details {
+  margin: var(--space-4) 0;
+  padding: 0 var(--space-4);
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
 }
 
 details summary {
-  padding: 0.5rem 0;
-  border-top: 1px solid var(--border);
+  padding: var(--space-3) 0;
+  color: var(--text-bright);
   cursor: pointer;
-  font-size: 1.2rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+details[open] > summary {
+  margin-bottom: var(--space-3);
+  border-bottom: 1px solid var(--border);
 }
 
 summary:hover,
 summary:focus-visible {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 summary:focus-visible {
-  border-radius: 2px;
+  border-radius: var(--radius-sm);
   outline: 2px solid var(--focus);
   outline-offset: 2px;
 }
 
 dialog {
-  background-color: var(--background-body);
+  max-width: min(32rem, calc(100vw - 2rem));
+  padding: var(--space-6);
   color: var(--text-main);
+  background-color: var(--surface-raised);
   border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 10px 30px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
 }
 
 dialog > header:first-child {
-  border-radius: 6px 6px 0 0;
-  margin: -10px -30px 10px;
-  padding: 10px;
-  text-align: center;
+  margin: 0 0 var(--space-4);
+  padding: 0 0 var(--space-3);
+  text-align: left;
   border-bottom: 1px solid var(--border);
 }
 
 dialog::backdrop {
-  background: #0000009c;
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.62);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+progress,
+meter {
+  width: 100%;
+  accent-color: var(--links);
 }
 
 footer {
-  border-top: 1px solid var(--border);
-  padding-top: 10px;
+  margin-top: var(--space-10);
+  padding-top: var(--space-6);
   color: var(--text-muted);
+  border-top: 1px solid var(--border);
 }
 
 body > footer {
-  margin-top: 40px;
+  margin-top: var(--space-12);
 }

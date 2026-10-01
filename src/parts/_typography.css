@@ -2,33 +2,85 @@ h1,
 h2,
 h3,
 h4,
-h5 {
-  margin: 3rem 0 1.38rem;
-  line-height: 1.3;
+h5,
+h6 {
+  color: var(--text-bright);
+  font-weight: 650;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+  text-wrap: balance;
 }
-
-h1 { font-size: 2.488rem; }
-h2 { font-size: 2.074rem; }
-h3 { font-size: 1.728rem; }
-h4 { font-size: 1.44rem; }
-h5 { font-size: 1.2rem; }
-h6 { font-size: 1rem; }
-small { font-size: 0.833rem; }
 
 h1,
 h2,
 h3,
 h4,
-h5,
-h6,
+h5 {
+  margin: var(--space-10) 0 var(--space-3);
+}
+
+h1 {
+  font-size: clamp(2rem, 1.75rem + 1.1vw, 2.5rem);
+}
+
+h2 {
+  font-size: clamp(1.5rem, 1.35rem + 0.7vw, 1.9rem);
+}
+
+h3 {
+  font-size: clamp(1.25rem, 1.15rem + 0.45vw, 1.5rem);
+}
+
+h4 {
+  font-size: 1.125rem;
+}
+
+h5 {
+  font-size: 1rem;
+}
+
+h6 {
+  margin: var(--space-6) 0 var(--space-2);
+  font-size: 0.9375rem;
+}
+
+p {
+  margin: 0 0 var(--space-4);
+}
+
+small {
+  font-size: 0.875rem;
+}
+
 strong {
   color: var(--text-bright);
 }
 
+main > header:first-child {
+  margin-bottom: var(--space-10);
+}
+
+main > header:first-child > :first-child:not(img),
+main > header:first-child > img:first-child + h1,
+section > header > :first-child,
+article > header > :first-child {
+  margin-top: 0;
+}
+
+main > header:first-child > img:first-child {
+  display: block;
+  inline-size: min(44vw, 12rem);
+  block-size: auto;
+  margin: var(--space-4) auto var(--space-6);
+}
+
 blockquote {
-  border-left: 4px solid var(--focus);
-  margin: 1.5em 0;
-  padding: 0 1em;
+  margin: var(--space-6) 0;
+  padding: var(--space-4) var(--space-6);
+  color: var(--text-main);
+  background: var(--surface-raised);
+  border-left: 3px solid var(--focus);
+  border-radius: 0 var(--radius) var(--radius) 0;
 }
 
 blockquote > :first-child {
@@ -47,39 +99,52 @@ address {
   font-style: normal;
 }
 
-a[href^="mailto:"]::before { content: "📧 "; }
-a[href^="tel:"]::before { content: "📞 "; }
-a[href^="sms:"]::before { content: "💬 "; }
+a[href^="mailto:"]::before {
+  content: "📧 ";
+}
+
+a[href^="tel:"]::before {
+  content: "📞 ";
+}
+
+a[href^="sms:"]::before {
+  content: "💬 ";
+}
 
 mark {
   color: var(--mark-text);
   background-color: var(--links);
-  border-radius: 2px;
-  padding: 0 2px;
+  border-radius: var(--radius-sm);
+  padding: 0.1em 0.25em;
 }
 
 ul,
 ol {
-  padding-left: 2em;
+  margin: 0 0 var(--space-4);
+  padding-left: 1.5em;
 }
 
 aside {
-  width: 40%;
-  padding-left: 0.5rem;
-  margin-left: 0.5rem;
+  width: 38%;
+  padding: var(--space-4);
+  margin: 0 0 var(--space-4) var(--space-4);
   float: right;
-  border-left: 2px solid var(--focus);
-  font-style: italic;
+  color: var(--text-main);
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--focus);
+  border-radius: var(--radius);
+  font-style: normal;
 }
 
-aside > p {
-  margin: 0.5rem;
+aside > :last-child {
+  margin-bottom: 0;
 }
 
 @media (max-width: 40rem) {
   aside {
     width: auto;
-    margin-left: 0;
+    margin: var(--space-4) 0;
     float: none;
   }
 }

@@ -71,7 +71,7 @@ npm run check
 
 ## Goal
 
-Bahunya provides its baseline through semantic HTML selectors rather than framework-specific classes or IDs. That keeps markup readable and lets native HTML structure carry more of the styling contract.
+Bahunya provides its baseline through semantic HTML selectors rather than framework-specific classes or IDs. Its visual system uses a compact responsive type scale, touch-sized controls, restrained surfaces, and shared spacing/radius tokens while keeping markup readable.
 
 The project intentionally does not try to express layouts that require application-specific class names.
 

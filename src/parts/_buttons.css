@@ -2,23 +2,44 @@ input[type="submit"],
 input[type="reset"],
 input[type="button"],
 button {
-  background: var(--background-bright);
-  border: 1px solid var(--border-muted);
+  min-height: var(--control-height);
+  margin: 0 var(--space-2) var(--space-2) 0;
+  padding: 0 var(--space-4);
   color: var(--text-bright);
+  background: var(--surface-raised);
+  border: 1px solid var(--border-muted);
+  border-radius: var(--radius);
   font-family: inherit;
-  font-size: 87.5%;
-  margin-right: 0.5rem;
-  margin-bottom: 0.5rem;
-  padding: 5px 16px;
-  border-radius: 6px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1;
+  transition:
+    transform 120ms ease,
+    color 140ms ease,
+    background-color 140ms ease,
+    border-color 140ms ease,
+    box-shadow 140ms ease;
+}
+
+input[type="submit"] {
+  color: var(--accent-contrast);
+  background: var(--links);
+  border-color: var(--links);
 }
 
 input[type="submit"]:hover,
 input[type="reset"]:hover,
 input[type="button"]:hover,
 button:hover {
+  background: var(--surface-hover);
   border-color: var(--border-bright);
-  filter: brightness(115%);
+}
+
+input[type="submit"]:hover {
+  color: var(--accent-contrast);
+  background: var(--links);
+  border-color: var(--links);
+  filter: brightness(1.06);
 }
 
 input[type="submit"]:focus-visible,
@@ -27,7 +48,7 @@ input[type="button"]:focus-visible,
 button:focus-visible {
   border-color: var(--focus);
   outline: 2px solid var(--focus);
-  outline-offset: 1px;
+  outline-offset: 2px;
   box-shadow: 0 0 0 3px var(--focus-background);
 }
 
@@ -35,7 +56,7 @@ input[type="submit"]:active,
 input[type="reset"]:active,
 input[type="button"]:active,
 button:active {
-  background: var(--button-hover);
+  transform: scale(0.98);
 }
 
 input[type="submit"]:disabled,
