@@ -9,23 +9,38 @@ input[type="radio"] {
   cursor: pointer;
 }
 
-input:not([type="checkbox"]):not([type="radio"]),
-select {
+input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+select,
+textarea {
   display: block;
+  width: 100%;
 }
 
 input,
 textarea,
 select {
+  min-height: var(--control-height);
   color: var(--text-bright);
   background-color: var(--background);
   font-family: inherit;
-  font-size: inherit;
-  margin-right: 6px;
-  margin-bottom: 6px;
-  padding: 10px;
+  font-size: 1rem;
+  margin: 0 0 var(--space-3);
+  padding: 0.625rem 0.875rem;
   border: 1px solid var(--border-muted);
-  border-radius: 6px;
+  border-radius: var(--radius);
+  transition:
+    border-color 140ms ease,
+    background-color 140ms ease,
+    box-shadow 140ms ease;
+}
+
+textarea {
+  min-height: 8rem;
+  resize: vertical;
+}
+
+textarea:not([rows]) {
+  height: 10rem;
 }
 
 option,
@@ -35,9 +50,8 @@ optgroup {
 }
 
 input[type="color"] {
-  min-height: 2rem;
-  padding: 8px;
-  cursor: pointer;
+  min-height: var(--control-height);
+  padding: var(--space-2);
 }
 
 input[type="checkbox"],
@@ -48,22 +62,22 @@ input[type="range"] {
 
 input[type="checkbox"],
 input[type="radio"] {
-  height: 1.2em;
-  width: 1em;
+  width: 1.15em;
+  height: 1.15em;
+  margin-right: var(--space-2);
+  vertical-align: -0.12em;
 }
 
 input[type="radio"] {
   border-radius: 100%;
 }
 
-input {
-  vertical-align: top;
-}
-
 label {
-  vertical-align: middle;
-  margin-bottom: 4px;
   display: inline-block;
+  margin-bottom: var(--space-2);
+  color: var(--text-bright);
+  font-size: 0.9375rem;
+  font-weight: 550;
 }
 
 input:not([type="checkbox"]):not([type="radio"]),
@@ -75,18 +89,6 @@ textarea {
   -webkit-appearance: none;
 }
 
-textarea {
-  display: block;
-  margin-right: 0;
-  resize: vertical;
-  width: 100%;
-}
-
-textarea:not([rows]) {
-  min-height: 40px;
-  height: 140px;
-}
-
 select:not([multiple]) {
   background-image:
     linear-gradient(45deg, transparent 50%, var(--text-muted) 50%),
@@ -96,13 +98,19 @@ select:not([multiple]) {
     calc(100% - 11px) 50%;
   background-repeat: no-repeat;
   background-size: 5px 5px;
-  padding-right: 35px;
+  padding-right: 2.25rem;
 }
 
 select[multiple] {
-  padding-right: 10px;
+  padding-right: 0.875rem;
   background-image: none;
   overflow-y: auto;
+}
+
+input:hover,
+select:hover,
+textarea:hover {
+  border-color: var(--border-bright);
 }
 
 input:focus,
@@ -124,7 +132,7 @@ select:disabled,
 button:disabled,
 textarea:disabled {
   cursor: not-allowed;
-  opacity: 0.5;
+  opacity: 0.45;
 }
 
 ::placeholder {
@@ -132,13 +140,16 @@ textarea:disabled {
 }
 
 fieldset {
-  border: 1px var(--border) solid;
-  border-radius: 6px;
-  margin: 0 0 12px;
-  padding: 10px 20px;
+  margin: 0 0 var(--space-4);
+  padding: var(--space-4) var(--space-4);
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
 }
 
 legend {
-  font-size: 0.9em;
-  font-weight: 600;
+  padding: 0 var(--space-2);
+  color: var(--text-bright);
+  font-size: 0.9rem;
+  font-weight: 650;
 }
