@@ -857,6 +857,11 @@ body > header:first-child > nav > ul > li {
   margin-top: 0;
 }
 
+body > nav:first-of-type li + li,
+body > header:first-child > nav li + li {
+  margin-top: 0;
+}
+
 body > nav:first-of-type details,
 body > header:first-child > nav details {
   position: relative;
@@ -946,6 +951,11 @@ body > header:first-child > nav > ul > li:last-child ul {
   body > nav:first-of-type > ul::-webkit-scrollbar,
   body > header:first-child > nav > ul::-webkit-scrollbar {
     display: none;
+  }
+
+  body > nav:first-of-type > ul:has(details[open]),
+  body > header:first-child > nav > ul:has(details[open]) {
+    overflow: visible;
   }
 
   body > nav:first-of-type a,
