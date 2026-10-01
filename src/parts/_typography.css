@@ -61,6 +61,7 @@ main > header:first-child {
 }
 
 main > header:first-child > :first-child:not(img),
+main > header:first-child > img:first-child + h1,
 section > header > :first-child,
 article > header > :first-child {
   margin-top: 0;
