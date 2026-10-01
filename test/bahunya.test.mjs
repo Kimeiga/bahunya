@@ -61,6 +61,23 @@ test("project metadata and docs point at the public Bahunya site", async () => {
   assert.match(readme, /data-theme="light"/);
 });
 
+test("visual system stays responsive, touch-friendly, and classless", async () => {
+  const [css, index, demo] = await Promise.all([
+    bundleCss(),
+    readFile(join(root, "index.html"), "utf8"),
+    readFile(join(root, "demo.html"), "utf8"),
+  ]);
+
+  assert.match(css, /--control-height: 2\.75rem/);
+  assert.match(css, /--radius-lg: 1\.25rem/);
+  assert.match(css, /font-size: clamp\(2rem,/);
+  assert.match(css, /position: sticky/);
+  assert.match(css, /min-height: var\(--control-height\)/);
+  assert.match(css, /prefers-reduced-motion: reduce/);
+  assert.match(index, /width="192" height="192"/);
+  assert.doesNotMatch(demo, /\sclass="/);
+});
+
 test("package build is dependency-free", async () => {
   const pkg = JSON.parse(await readFile(join(root, "package.json"), "utf8"));
   assert.equal(pkg.devDependencies, undefined);
