@@ -133,6 +133,26 @@ test("heading scale stays close to the compact mobile reference", async () => {
   assert.match(css, /line-height: 1\.5/);
 });
 
+test("desktop dropdowns are compact hover menus with inset highlighting", async () => {
+  const css = await bundleCss();
+
+  assert.match(css, /@media \(hover: hover\) and \(pointer: fine\)/);
+  assert.match(css, /details:hover > ul/);
+  assert.match(css, /top: 100%/);
+  assert.match(css, /padding: 0\.25rem 0\.375rem/);
+  assert.match(css, /border-radius: var\(--radius-sm\)/);
+  assert.match(css, /min-height: 2\.125rem/);
+  assert.match(css, /details > ul > li,[\s\S]*width: 100%/);
+});
+
+test("mobile dropdowns remain tap-open with larger touch targets", async () => {
+  const css = await bundleCss();
+
+  assert.match(css, /details\[open\] > ul,[\s\S]*display: flex/);
+  assert.match(css, /position: fixed;[\s\S]*top: 3rem/);
+  assert.match(css, /min-height: 2\.75rem/);
+});
+
 test("package build is dependency-free", async () => {
   const pkg = JSON.parse(await readFile(join(root, "package.json"), "utf8"));
   assert.equal(pkg.devDependencies, undefined);
