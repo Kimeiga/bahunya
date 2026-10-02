@@ -892,22 +892,31 @@ body > nav:first-of-type details > ul,
 body > header:first-child > nav details > ul {
   display: none;
   position: absolute;
-  top: calc(100% + var(--space-2));
+  top: 100%;
   left: 0;
   z-index: 1000;
-  min-width: min(18rem, calc(100vw - 2rem));
+  width: max-content;
+  min-width: 12rem;
+  max-width: min(18rem, calc(100vw - 1rem));
   flex-direction: column;
   align-items: stretch;
   gap: 0;
-  max-height: min(70vh, 32rem);
+  max-height: min(60vh, 24rem);
   overflow-y: auto;
-  padding: var(--space-2);
+  padding: 0.25rem 0.375rem;
   background: var(--nav-dropdown);
   border: 1px solid var(--border);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
   backdrop-filter: saturate(180%) blur(20px);
   -webkit-backdrop-filter: saturate(180%) blur(20px);
+}
+
+body > nav:first-of-type ul li ul > li,
+body > header:first-child > nav ul li ul > li,
+body > nav:first-of-type details > ul > li,
+body > header:first-child > nav details > ul > li {
+  width: 100%;
 }
 
 body > nav:first-of-type ul li ul a,
@@ -916,17 +925,23 @@ body > nav:first-of-type details > ul a,
 body > header:first-child > nav details > ul a {
   width: 100%;
   height: auto;
-  min-height: var(--control-height);
+  min-height: 2.125rem;
   justify-content: flex-start;
+  padding-inline: 0.75rem;
+  border-radius: 0.375rem;
 }
 
-body > nav:first-of-type ul li:hover > ul,
-body > nav:first-of-type ul li:focus-within > ul,
-body > header:first-child > nav ul li:hover > ul,
-body > header:first-child > nav ul li:focus-within > ul,
-body > nav:first-of-type details[open] > ul,
-body > header:first-child > nav details[open] > ul {
-  display: flex;
+@media (hover: hover) and (pointer: fine) {
+  body > nav:first-of-type ul li:hover > ul,
+  body > nav:first-of-type ul li:focus-within > ul,
+  body > header:first-child > nav ul li:hover > ul,
+  body > header:first-child > nav ul li:focus-within > ul,
+  body > nav:first-of-type details:hover > ul,
+  body > nav:first-of-type details:focus-within > ul,
+  body > header:first-child > nav details:hover > ul,
+  body > header:first-child > nav details:focus-within > ul {
+    display: flex;
+  }
 }
 
 body > nav:first-of-type > ul > li:last-child ul,
@@ -964,6 +979,11 @@ body > header:first-child > nav > ul > li:last-child ul {
   body > header:first-child > nav summary {
     padding-inline: 0.625rem;
     font-size: 0.8125rem;
+  }
+
+  body > nav:first-of-type details[open] > ul,
+  body > header:first-child > nav details[open] > ul {
+    display: flex;
   }
 
   body > nav:first-of-type details > ul,
